@@ -1,0 +1,8 @@
+{
+  "name": "wisp-web",
+  "version": "1.0.0",
+  "description": "Wisp — In-browser compression and conversion for images, PDFs, and video.",
+  "scripts": {
+    "start": "npx serve ."
+  }
+}

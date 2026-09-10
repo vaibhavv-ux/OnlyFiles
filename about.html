@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>if(location.hostname==='www.onlyfiles.in'){location.replace('https://onlyfiles.in'+location.pathname+location.search+location.hash);}</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About OnlyFiles — 100% Private, Client-Side File Tools</title>
+  <meta name="description" content="Learn about OnlyFiles: our mission, zero-server client-side privacy architecture, WebAssembly & WebCrypto technology, and how your documents never leave your browser.">
+  <meta name="keywords" content="about OnlyFiles, client-side privacy, zero server file tools, private PDF tools, WebAssembly file converter">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://onlyfiles.in/about">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://onlyfiles.in/about">
+  <meta property="og:title" content="About OnlyFiles — 100% Private Client-Side Tools">
+  <meta property="og:description" content="Discover how OnlyFiles processes your documents, PDFs, and images completely inside your browser with zero server uploads.">
+  <meta property="og:image" content="https://onlyfiles.in/banner.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About OnlyFiles — The Zero-Knowledge Privacy File Suite">
+  <meta name="twitter:description" content="Learn how our client-side architecture keeps your sensitive files 100% private.">
+  <meta name="twitter:image" content="https://onlyfiles.in/banner.png">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="512x512" href="/logo-512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/logo-512.png">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Schema.org Markup: Organization & AboutPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About OnlyFiles",
+    "url": "https://onlyfiles.in/about",
+    "description": "Information about OnlyFiles and its client-side zero-server file utility platform.",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "OnlyFiles",
+      "url": "https://onlyfiles.in",
+      "logo": "https://onlyfiles.in/logo-512.png",
+      "description": "Privacy-first suite of 19 in-browser client-side file tools running on WebAssembly and Web Crypto.",
+      "foundingDate": "2024",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Support",
+        "email": "hello@onlyfiles.in"
+      }
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://onlyfiles.in/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About",
+        "item": "https://onlyfiles.in/about"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: rgba(18, 26, 43, 0.7);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(99, 102, 241, 0.4);
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --accent: #38bdf8;
+      --accent-emerald: #10b981;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      background-image: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 60%);
+      min-height: 100vh;
+    }
+    a { color: var(--accent); text-decoration: none; transition: 0.2s; }
+    a:hover { color: #fff; }
+    .container { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
+    
+    header {
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(9, 13, 22, 0.8);
+    }
+    .header-content { display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 0.75rem; font-weight: 800; font-size: 1.25rem; color: #fff; }
+    .logo i { color: var(--primary); font-size: 1.4rem; }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; font-size: 0.95rem; }
+    .nav-links a { color: var(--text-muted); font-weight: 500; }
+    .nav-links a:hover, .nav-links a.active { color: #fff; }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #8b5cf6);
+      color: #fff;
+      padding: 0.6rem 1.25rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
+    }
+    .btn-primary:hover { opacity: 0.95; transform: translateY(-1px); }
+
+    .breadcrumbs { padding: 1.5rem 0 0.5rem; font-size: 0.875rem; color: var(--text-muted); }
+    .breadcrumbs a { color: var(--text-muted); }
+    .breadcrumbs span { margin: 0 0.5rem; }
+
+    .hero-section { text-align: center; padding: 3.5rem 0 2rem; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(16, 185, 129, 0.12);
+      color: var(--accent-emerald);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+    h1 { font-size: 2.75rem; font-weight: 800; line-height: 1.2; margin-bottom: 1.2rem; }
+    h1 span { background: linear-gradient(135deg, #fff 30%, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { font-size: 1.15rem; color: var(--text-muted); max-width: 680px; margin: 0 auto 2.5rem; }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.25rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin: 2.5rem 0;
+    }
+    .pillar-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+    }
+    .pillar-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-3px);
+      background: rgba(99, 102, 241, 0.04);
+    }
+    .pillar-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: rgba(99, 102, 241, 0.15);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .pillar-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; color: #fff; }
+    .pillar-card p { font-size: 0.9rem; color: var(--text-muted); }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+    }
+    .comparison-table th, .comparison-table td {
+      padding: 1rem 1.25rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .comparison-table th {
+      background: rgba(255, 255, 255, 0.03);
+      color: #fff;
+      font-weight: 700;
+    }
+    .comparison-table tr:hover { background: rgba(255, 255, 255, 0.015); }
+    .text-green { color: var(--accent-emerald); font-weight: 600; }
+    .text-red { color: #ef4444; }
+
+    .team-box {
+      border-left: 4px solid var(--primary);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 0;
+      margin-top: 4rem;
+      background: rgba(9, 13, 22, 0.95);
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2.5rem; margin-bottom: 2rem; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .footer-links a { color: var(--text-muted); }
+    .footer-links a:hover { color: #fff; }
+    .bottom-bar { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.8rem; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-content">
+      <a href="/" class="logo">
+        <i class="fa-solid fa-cube"></i> OnlyFiles
+      </a>
+      <nav class="nav-links">
+        <a href="/compress-pdf">Compress PDF</a>
+        <a href="/merge-pdf">Merge PDF</a>
+        <a href="/compress-image">Compress Image</a>
+        <a href="/security-vault">Security Vault</a>
+        <a href="/about" class="active">About</a>
+        <a href="/" class="btn-primary">Explore All Tools</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumbs">
+      <a href="/">Home</a> <span>/</span> About OnlyFiles
+    </div>
+
+    <section class="hero-section">
+      <div class="badge"><i class="fa-solid fa-shield-halved"></i> 100% Client-Side Architecture</div>
+      <h1>Private by Design. <span>Zero Servers.</span></h1>
+      <p class="subtitle">
+        OnlyFiles was engineered with one non-negotiable principle: your confidential documents, legal contracts, tax records, and personal photos must never leave your computer.
+      </p>
+    </section>
+
+    <div class="card">
+      <h2 style="font-size: 1.7rem; margin-bottom: 1rem; color: #fff;">Our Mission & Technology</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1.25rem;">
+        Traditional online PDF converters and image optimizers ask you to trust their servers with your most sensitive information. Every day, millions of confidential files are uploaded to third-party databases, cloud buckets, and external compute servers where they risk being retained, leaked, or exposed to breaches.
+      </p>
+      <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+        <strong>OnlyFiles eliminates this vulnerability completely.</strong> By harnessing modern browser capabilities including <strong>WebAssembly (WASM)</strong>, HTML5 Canvas API, and the <strong>Web Cryptography API (W3C Standard)</strong>, our suite executes 100% of its computation locally inside your device’s browser engine (V8, JavaScriptCore, Gecko).
+      </p>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon"><i class="fa-solid fa-ban"></i></div>
+          <h3>Zero Server Uploads</h3>
+          <p>Files stay strictly in your computer's RAM. No backend server ever receives a single byte of your file content.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon"><i class="fa-solid fa-bolt"></i></div>
+          <h3>Instant Local Processing</h3>
+          <p>Bypassing cloud queues means processing completes in milliseconds without network bandwidth throttling.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon"><i class="fa-solid fa-lock"></i></div>
+          <h3>Military-Grade Encryption</h3>
+          <p>Tools like our Security Vault utilize AES-256-GCM and PBKDF2 cryptography calculated entirely in your browser.</p>
+        </div>
+      </div>
+
+      <div class="team-box">
+        <h3 style="color: #fff; font-size: 1.15rem; margin-bottom: 0.5rem;">Network Proof & Transparency</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">
+          You can verify our privacy guarantee yourself at any time: open your browser's Developer Tools (<code>F12</code>), switch to the <strong>Network</strong> tab, and run any tool on OnlyFiles. You will observe that zero payload packets or file bytes are dispatched to external endpoints.
+        </p>
+      </div>
+
+      <h3 style="color: #fff; font-size: 1.35rem; margin: 2rem 0 1rem;">How OnlyFiles Compares</h3>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Security & Architecture Feature</th>
+            <th>Traditional File Converters</th>
+            <th>OnlyFiles</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>File Upload to Cloud Server</td>
+            <td class="text-red"><i class="fa-solid fa-xmark"></i> Yes (Mandatory)</td>
+            <td class="text-green"><i class="fa-solid fa-check"></i> Never (100% Browser Local)</td>
+          </tr>
+          <tr>
+            <td>Data Retention Risk</td>
+            <td class="text-red"><i class="fa-solid fa-xmark"></i> High (Server logs, temp storage)</td>
+            <td class="text-green"><i class="fa-solid fa-check"></i> Zero (Discarded upon tab close)</td>
+          </tr>
+          <tr>
+            <td>File Size / Speed Limits</td>
+            <td>Network dependent (Slow uploads)</td>
+            <td class="text-green">Near-instant (Runs on your CPU/GPU)</td>
+          </tr>
+          <tr>
+            <td>GDPR, HIPAA & SOC2 Compatibility</td>
+            <td>Requires strict cloud compliance</td>
+            <td class="text-green">Inherently compliant (No data transfers)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2 style="font-size: 1.5rem; margin-bottom: 1rem; color: #fff;">Connect With Our Team</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1rem;">
+        Have questions about our client-side architecture, feature requests, or enterprise security questions? We are always happy to hear from you.
+      </p>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">
+        <strong>Support & Inquiries:</strong> <a href="mailto:hello@onlyfiles.in">hello@onlyfiles.in</a><br>
+        <strong>Official Website:</strong> <a href="https://onlyfiles.in">https://onlyfiles.in</a>
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom: 0.75rem;"><i class="fa-solid fa-cube"></i> OnlyFiles</div>
+        <p>100% private, client-side browser file tools. Zero uploads, zero telemetry on your files, maximum security.</p>
+      </div>
+      <div>
+        <h4 style="color: #fff; margin-bottom: 1rem;">Pillar Tools</h4>
+        <ul class="footer-links">
+          <li><a href="/compress-pdf">Compress PDF</a></li>
+          <li><a href="/merge-pdf">Merge PDF</a></li>
+          <li><a href="/compress-image">Compress Image</a></li>
+          <li><a href="/security-vault">Security Vault</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color: #fff; margin-bottom: 1rem;">Legal & Trust</h4>
+        <ul class="footer-links">
+          <li><a href="/about">About OnlyFiles</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms-and-conditions">Terms & Conditions</a></li>
+          <li><a href="mailto:hello@onlyfiles.in">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom-bar">
+      &copy; 2024 OnlyFiles. All rights reserved. Built for private, secure, client-side productivity.
+    </div>
+  </footer>
+
+</body>
+</html>

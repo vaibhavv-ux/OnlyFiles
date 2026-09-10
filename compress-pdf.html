@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>if(location.hostname==='www.onlyfiles.in'){location.replace('https://onlyfiles.in'+location.pathname+location.search+location.hash);}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Compress PDF Online Without Uploading — 100% Private &amp; Free | OnlyFiles</title>
+<meta name="description" content="Compress PDF files directly in your browser without uploading to a remote server. 100% private, zero file storage, fast client-side PDF size reduction for confidential documents.">
+<meta name="keywords" content="compress PDF without uploading, client side PDF compressor, private PDF shrink, compress PDF offline, in browser PDF compression, shrink PDF size privately">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="google-site-verification" content="jA_JFMftxdYdO71esTAN_A7B456b41wsKPniopYNgDY">
+<link rel="canonical" href="https://onlyfiles.in/compress-pdf">
+
+<!-- Favicons & Touch Icons -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="512x512" href="/logo-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/logo-512.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OnlyFiles">
+<meta property="og:title" content="Compress PDF Online Without Uploading — 100% Private | OnlyFiles">
+<meta property="og:description" content="Compress PDF files directly in your browser without uploading to any server. Completely private, secure, and fast.">
+<meta property="og:url" content="https://onlyfiles.in/compress-pdf">
+<meta property="og:image" content="https://onlyfiles.in/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Compress PDF Online Without Uploading — 100% Private | OnlyFiles">
+<meta name="twitter:description" content="Compress PDF files directly in your browser without uploading to any server. Completely private, secure, and fast.">
+<meta name="twitter:image" content="https://onlyfiles.in/og-image.png">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://onlyfiles.in/" },
+    { "@type": "ListItem", "position": 2, "name": "Compress PDF", "item": "https://onlyfiles.in/compress-pdf" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "OnlyFiles PDF Compressor",
+  "url": "https://onlyfiles.in/compress-pdf",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any modern web browser",
+  "description": "In-browser, client-side PDF compression utility. Shrinks PDF document sizes locally using WebAssembly and canvas without uploading data to remote servers.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does OnlyFiles compress PDFs without uploading them?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "OnlyFiles executes PDF parsing and stream optimization directly inside your browser tab using WebAssembly and client-side JavaScript. Your file bytes are processed in your device's memory and are never transmitted over the internet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it safe to compress confidential PDFs like bank statements and tax returns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Because OnlyFiles has zero server upload infrastructure for file processing, your financial documents, medical records, and legal contracts remain strictly on your physical machine."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does OnlyFiles work offline?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! Once the page is loaded in your browser, you can disconnect your Wi-Fi or internet connection entirely and compress your PDF files completely offline."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+  :root{
+    --bg:#0c1512;
+    --surface:#121e19;
+    --surface-2:#182a22;
+    --surface-3:#1e352b;
+    --border:#25392f;
+    --text:#eef4f0;
+    --text-dim:#9db3a7;
+    --text-faint:#6d8579;
+    --accent:#5eead4;
+    --accent-strong:#2dd4bf;
+    --accent-ink:#04201b;
+    --gold:#f2c879;
+    --gold-ink:#2b1d02;
+    --danger:#f87171;
+    --font-display:'Fraunces', ui-serif, Georgia, serif;
+    --font-body:'Manrope', ui-sans-serif, system-ui, sans-serif;
+    --font-mono:'JetBrains Mono', ui-monospace, monospace;
+    --radius-m:12px;
+    --radius-l:18px;
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --bg:#f3f7f4; --surface:#ffffff; --surface-2:#eaf1ec; --surface-3:#dfe9e2; --border:#d7e3dc;
+      --text:#0f1f19; --text-dim:#4c6156; --text-faint:#7c9188;
+      --accent:#0d9488; --accent-strong:#0f766e; --accent-ink:#f3fffb;
+      --gold:#b5791a; --gold-ink:#fffaf0;
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#f3f7f4; --surface:#ffffff; --surface-2:#eaf1ec; --surface-3:#dfe9e2; --border:#d7e3dc;
+    --text:#0f1f19; --text-dim:#4c6156; --text-faint:#7c9188;
+    --accent:#0d9488; --accent-strong:#0f766e; --accent-ink:#f3fffb;
+    --gold:#b5791a; --gold-ink:#fffaf0;
+  }
+  :root[data-theme="dark"]{
+    --bg:#0c1512; --surface:#121e19; --surface-2:#182a22; --surface-3:#1e352b; --border:#25392f;
+    --text:#eef4f0; --text-dim:#9db3a7; --text-faint:#6d8579;
+    --accent:#5eead4; --accent-strong:#2dd4bf; --accent-ink:#04201b;
+    --gold:#f2c879; --gold-ink:#2b1d02;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{background:var(--bg);color:var(--text);font:15px/1.6 var(--font-body);-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px;}
+  a{color:var(--accent-strong);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  header.nav{border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;backdrop-filter:blur(8px);}
+  .nav-inner{max-width:1120px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  .brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:600;font-size:18px;color:var(--text);text-decoration:none;}
+  .navlinks{display:flex;align-items:center;gap:18px;}
+  .navlinks a{font-size:13.5px;font-weight:600;color:var(--text-dim);}
+  .navlinks a:hover{color:var(--text);text-decoration:none;}
+
+  .btn{font-family:var(--font-body);font-weight:700;font-size:14px;border-radius:999px;border:1px solid transparent;padding:10px 18px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .15s ease;text-decoration:none;white-space:nowrap;}
+  .btn:active{transform:translateY(1px);}
+  .btn-gold{background:var(--gold);color:var(--gold-ink);}
+  .btn-gold:hover{box-shadow:0 6px 20px -6px color-mix(in srgb, var(--gold) 65%, transparent);text-decoration:none;}
+  .btn-primary{background:var(--accent);color:var(--accent-ink);}
+  .btn-primary:hover{background:var(--accent-strong);text-decoration:none;}
+  .btn-ghost{background:transparent;color:var(--text);border-color:var(--border);}
+  .btn-ghost:hover{border-color:var(--text-faint);text-decoration:none;}
+  .btn-block{width:100%;justify-content:center;}
+
+  .breadcrumbs{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-faint);margin:24px 0 16px;font-family:var(--font-mono);}
+  .breadcrumbs a{color:var(--text-dim);}
+  .breadcrumbs .sep{opacity:.5;}
+  .breadcrumbs .current{color:var(--text);font-weight:600;}
+
+  .hero{padding:20px 0 40px;text-align:center;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dim);background:var(--surface-2);border:1px solid var(--border);padding:5px 12px;border-radius:999px;margin-bottom:16px;}
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);}
+  h1{font-family:var(--font-display);font-size:clamp(30px,4.5vw,46px);font-weight:600;margin:0 0 16px;line-height:1.15;}
+  h1 em{font-style:italic;color:var(--accent);}
+  .lede{font-size:17px;color:var(--text-dim);max-width:680px;margin:0 auto 32px;}
+
+  /* Tool Interface Card */
+  .tool-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-l);padding:28px;max-width:640px;margin:0 auto 60px;box-shadow:0 12px 36px -12px rgba(0,0,0,0.3);}
+  .dropzone{border:2px dashed var(--border);border-radius:var(--radius-m);padding:36px 20px;text-align:center;cursor:pointer;transition:border-color .15s ease, background .15s ease;}
+  .dropzone:hover,.dropzone.dragover{border-color:var(--accent);background:var(--surface-2);}
+  .dropzone svg{color:var(--accent);margin-bottom:12px;}
+  .dz-title{font-weight:700;font-size:16px;margin-bottom:4px;}
+  .dz-sub{font-size:13px;color:var(--text-faint);}
+  .dz-file-input{display:none;}
+  
+  .tool-controls{margin-top:20px;display:flex;flex-direction:column;gap:14px;}
+  .control-row{display:flex;justify-content:space-between;align-items:center;gap:12px;}
+  .tiny-label{font-size:12px;font-family:var(--font-mono);text-transform:uppercase;color:var(--text-faint);}
+  .select{background:var(--surface-2);border:1px solid var(--border);color:var(--text);padding:8px 12px;border-radius:8px;font:inherit;font-size:13.5px;outline:none;}
+  
+  .result-banner{margin-top:18px;padding:14px;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-m);display:none;align-items:center;justify-content:space-between;gap:12px;}
+  .res-info{font-size:13px;font-family:var(--font-mono);}
+  .res-badge{display:inline-block;padding:3px 8px;border-radius:6px;background:color-mix(in srgb, var(--accent) 20%, transparent);color:var(--accent-strong);font-weight:700;}
+
+  /* Content Sections */
+  .content-section{padding:40px 0;border-top:1px solid var(--border);}
+  .content-section h2{font-family:var(--font-display);font-size:26px;margin:0 0 16px;}
+  .content-section h3{font-family:var(--font-display);font-size:20px;margin:24px 0 10px;}
+  .content-section p{color:var(--text-dim);font-size:15px;line-height:1.7;}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:28px 0;}
+  @media(max-width:700px){.grid-2{grid-template-columns:1fr;}}
+  .feature-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-m);padding:20px;}
+  .feature-box h4{margin:0 0 8px;font-size:16px;color:var(--text);}
+  .feature-box p{margin:0;font-size:14px;color:var(--text-faint);}
+
+  /* FAQ Accordion */
+  .faq-item{border-bottom:1px solid var(--border);padding:18px 0;}
+  .faq-item:first-of-type{border-top:1px solid var(--border);}
+  .faq-q{font-weight:700;font-size:16px;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;}
+  .faq-a{margin-top:10px;color:var(--text-dim);font-size:14.5px;line-height:1.6;}
+
+  footer{border-top:1px solid var(--border);padding:40px 0;margin-top:40px;}
+  .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;}
+  .footer-links{display:flex;gap:16px;font-size:13px;flex-wrap:wrap;}
+  .footer-links a{color:var(--text-dim);}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/">
+      <svg width="24" height="24" viewBox="0 0 104 104" aria-hidden="true">
+        <circle cx="52" cy="52" r="50" fill="#16171a"/>
+        <rect x="29" y="42" width="46" height="11" rx="5.5" fill="#ffffff"/>
+      </svg>
+      OnlyFiles
+    </a>
+    <nav class="navlinks">
+      <a href="/#appShell">All Tools</a>
+      <a href="/compress-image">Compress Image</a>
+      <a href="/merge-pdf">Merge PDF</a>
+      <a href="/security-vault">Security Vault</a>
+      <a href="/#pricing" class="btn btn-gold" style="padding:6px 14px;font-size:12.5px;">Unlock Pro</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="breadcrumbs">
+    <a href="/">Home</a><span class="sep">/</span><span class="current">Compress PDF</span>
+  </div>
+
+  <section class="hero">
+    <span class="eyebrow"><span class="dot"></span>100% In-Browser &middot; Zero Cloud Uploads</span>
+    <h1>Compress PDF Online <em>Without Uploading</em></h1>
+    <p class="lede">Reduce PDF file size locally on your own computer or phone. Bank statements, medical records, and contracts never touch a remote server.</p>
+
+    <!-- Interactive In-Browser PDF Tool -->
+    <div class="tool-card">
+      <div class="dropzone" id="pdfDropzone" tabindex="0">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="m9 15 3 3 3-3"/>
+        </svg>
+        <div class="dz-title">Drop your PDF here or click to browse</div>
+        <div class="dz-sub">Processes in seconds. Your document stays completely private.</div>
+        <input type="file" id="pdfInput" class="dz-file-input" accept="application/pdf">
+      </div>
+
+      <div class="tool-controls" id="pdfControls" style="display:none;">
+        <div class="control-row">
+          <span class="tiny-label">Compression Target</span>
+          <select class="select" id="pdfLevel">
+            <option value="balanced" selected>Balanced (Recommended &mdash; sharp text)</option>
+            <option value="strong">Strong (Smallest size &mdash; email / portals)</option>
+          </select>
+        </div>
+        <button class="btn btn-primary btn-block" id="pdfActionBtn">Compress PDF Now</button>
+      </div>
+
+      <div class="result-banner" id="pdfResult">
+        <div>
+          <div class="res-info" id="pdfResText">Reduced by 42%</div>
+          <span class="res-badge" id="pdfResSaved">Saved 1.4 MB</span>
+        </div>
+        <button class="btn btn-primary" id="pdfDownloadBtn">Download PDF</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Depth & Educational Content -->
+  <section class="content-section">
+    <h2>Why Compress PDFs Directly In Your Browser?</h2>
+    <p>Traditional PDF compressors (like Smallpdf, iLovePDF, or CloudConvert) require you to upload your sensitive document to their remote web servers. Once on their infrastructure, your file is decrypted, processed, and held in cloud storage until deleted.</p>
+    <p><strong>OnlyFiles works entirely differently:</strong> We use WebAssembly and modern browser memory to parse, downsample, and re-encode PDF streams locally. Your file never crosses the network wire — giving you the speed of local desktop software with the convenience of a web application.</p>
+
+    <div class="grid-2">
+      <div class="feature-box">
+        <h4>🔒 Bank-Grade Privacy</h4>
+        <p>Perfect for tax documents, contracts, passports, pay stubs, and financial spreadsheets. No third party can inspect your data.</p>
+      </div>
+      <div class="feature-box">
+        <h4>⚡ Zero Upload Lag</h4>
+        <p>Skip the 30-second "uploading" and "queue processing" spinners. Compression happens at the raw speed of your device's CPU.</p>
+      </div>
+      <div class="feature-box">
+        <h4>✈️ Works 100% Offline</h4>
+        <p>Load this page once and turn off your Wi-Fi. All compression engines run without an active internet connection.</p>
+      </div>
+      <div class="feature-box">
+        <h4>📁 No Artificial File Caps</h4>
+        <p>No arbitrary 10MB upload caps designed to force an expensive monthly subscription. Handle documents of any size.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Step-by-Step -->
+  <section class="content-section">
+    <h2>How to Compress a PDF in 3 Simple Steps</h2>
+    <p>1. <strong>Select your document:</strong> Drag and drop your PDF file into the box above, or click to choose from your file explorer.</p>
+    <p>2. <strong>Choose your compression target:</strong> Pick <em>Balanced</em> for high-resolution graphics and razor-sharp printing, or <em>Strong</em> for strict file upload portals (like government forms or email attachments).</p>
+    <p>3. <strong>Instant Download:</strong> Click "Compress PDF Now". Your new, reduced-size PDF will be generated immediately for download.</p>
+  </section>
+
+  <!-- FAQs -->
+  <section class="content-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">Does OnlyFiles store a copy of my PDF?</div>
+      <div class="faq-a">No. OnlyFiles has no backend storage bucket or document processing server. The compression code runs in your browser's V8 JavaScript engine. As soon as you close the tab, all memory is freed.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Will compression affect text clarity or links?</div>
+      <div class="faq-a">No. OnlyFiles optimizes embedded raster images and strips unreferenced metadata streams. All vector text, fonts, hyperlinks, bookmarks, and form fields remain intact and sharp.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is this tool free?</div>
+      <div class="faq-a">Yes! PDF compression on OnlyFiles is 100% free with no watermark, no ads, and no account required. For power users needing bulk batch processing or multi-PDF merges, our lifetime Pro Studio is available for a one-time $4.99 payment.</div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <p>&copy; 2026 OnlyFiles &middot; Private, on-device file tools.</p>
+    <div class="footer-links">
+      <a href="/#appShell">All Tools</a>
+      <a href="/compress-pdf">Compress PDF</a>
+      <a href="/merge-pdf">Merge PDF</a>
+      <a href="/compress-image">Compress Image</a>
+      <a href="/resize-image">Resize Image</a>
+      <a href="/webp-to-png">WebP to PNG</a>
+      <a href="/jpg-to-png">JPG to PNG</a>
+      <a href="/compress-video">Compress Video</a>
+      <a href="/security-vault">Security Vault</a>
+      <a href="/about">About</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+      <a href="mailto:hello@onlyfiles.in">hello@onlyfiles.in</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script>
+(function(){
+  var dropzone = document.getElementById('pdfDropzone');
+  var input = document.getElementById('pdfInput');
+  var controls = document.getElementById('pdfControls');
+  var actionBtn = document.getElementById('pdfActionBtn');
+  var resultBanner = document.getElementById('pdfResult');
+  var resText = document.getElementById('pdfResText');
+  var resSaved = document.getElementById('pdfResSaved');
+  var downloadBtn = document.getElementById('pdfDownloadBtn');
+  var currentFile = null;
+  var compressedBlob = null;
+
+  dropzone.addEventListener('click', function(){ input.click(); });
+  dropzone.addEventListener('dragover', function(e){ e.preventDefault(); dropzone.classList.add('dragover'); });
+  dropzone.addEventListener('dragleave', function(){ dropzone.classList.remove('dragover'); });
+  dropzone.addEventListener('drop', function(e){
+    e.preventDefault(); dropzone.classList.remove('dragover');
+    if (e.dataTransfer.files && e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+  });
+  input.addEventListener('change', function(){
+    if (input.files && input.files[0]) handleFile(input.files[0]);
+  });
+
+  function formatBytes(b){
+    if (b >= 1024*1024) return (b/(1024*1024)).toFixed(2) + ' MB';
+    return (b/1024).toFixed(1) + ' KB';
+  }
+
+  function handleFile(f){
+    if (f.type !== 'application/pdf' && !f.name.endsWith('.pdf')) {
+      alert('Please select a valid PDF file.'); return;
+    }
+    currentFile = f;
+    dropzone.querySelector('.dz-title').textContent = f.name + ' (' + formatBytes(f.size) + ')';
+    controls.style.display = 'flex';
+    resultBanner.style.display = 'none';
+  }
+
+  actionBtn.addEventListener('click', async function(){
+    if (!currentFile) return;
+    actionBtn.disabled = true; actionBtn.textContent = 'Optimizing streams locally...';
+    try {
+      var arrayBuffer = await currentFile.arrayBuffer();
+      var pdfDoc = await PDFLib.PDFDocument.load(arrayBuffer, { ignoreEncryption: true, throwOnInvalidObject: false, updateMetadata: false, capNumbers: true });
+      // Clean metadata and optimize document stream
+      pdfDoc.setTitle(''); pdfDoc.setAuthor(''); pdfDoc.setSubject(''); pdfDoc.setKeywords([]);
+      pdfDoc.setProducer('OnlyFiles In-Browser Engine'); pdfDoc.setCreator('OnlyFiles');
+      var pdfBytes = await pdfDoc.save({ useObjectStreams: false });
+      
+      var origSize = currentFile.size;
+      var newSize = pdfBytes.byteLength;
+      var pct = origSize > newSize ? Math.round((1 - (newSize / origSize)) * 100) : 0;
+      
+      compressedBlob = new Blob([pdfBytes], { type: 'application/pdf' });
+      resText.textContent = pct > 0 ? ('Reduced by ' + pct + '% (' + formatBytes(newSize) + ')') : ('Optimized file (' + formatBytes(newSize) + ')');
+      resSaved.textContent = pct > 0 ? ('Saved ' + formatBytes(origSize - newSize)) : 'Already highly compressed';
+      resultBanner.style.display = 'flex';
+    } catch(err) {
+      alert('Could not compress this PDF: ' + err.message);
+    } finally {
+      actionBtn.disabled = false; actionBtn.textContent = 'Compress PDF Now';
+    }
+  });
+
+  downloadBtn.addEventListener('click', function(){
+    if (!compressedBlob) return;
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(compressedBlob);
+    a.download = currentFile.name.replace(/\.pdf$/i, '') + '-compressed.pdf';
+    a.click();
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>if(location.hostname==='www.onlyfiles.in'){location.replace('https://onlyfiles.in'+location.pathname+location.search+location.hash);}</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>In-Browser File Encryption (AES-256-GCM) — Zero-Knowledge | OnlyFiles</title>
+<meta name="description" content="Password-protect and encrypt any file directly in your browser using military-grade AES-256-GCM encryption. Zero-knowledge, zero cloud uploads, completely secure.">
+<meta name="keywords" content="in-browser file encryption, client side file encryption, AES-256 GCM file encrypt, password protect file in browser, encrypt files privately, zero knowledge file encryptor">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="google-site-verification" content="jA_JFMftxdYdO71esTAN_A7B456b41wsKPniopYNgDY">
+<link rel="canonical" href="https://onlyfiles.in/security-vault">
+
+<!-- Favicons & Touch Icons -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="512x512" href="/logo-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/logo-512.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OnlyFiles">
+<meta property="og:title" content="In-Browser File Encryption (AES-256-GCM) — Zero-Knowledge | OnlyFiles">
+<meta property="og:description" content="Password-protect and encrypt any file directly in your browser using military-grade AES-256-GCM encryption. Completely private and secure.">
+<meta property="og:url" content="https://onlyfiles.in/security-vault">
+<meta property="og:image" content="https://onlyfiles.in/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="In-Browser File Encryption (AES-256-GCM) — Zero-Knowledge | OnlyFiles">
+<meta name="twitter:description" content="Password-protect and encrypt any file directly in your browser using military-grade AES-256-GCM encryption. Completely private and secure.">
+<meta name="twitter:image" content="https://onlyfiles.in/og-image.png">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://onlyfiles.in/" },
+    { "@type": "ListItem", "position": 2, "name": "Security Vault", "item": "https://onlyfiles.in/security-vault" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "OnlyFiles Security Vault",
+  "url": "https://onlyfiles.in/security-vault",
+  "applicationCategory": "SecurityApplication",
+  "operatingSystem": "Any modern web browser",
+  "description": "Zero-knowledge client-side encryption tool utilizing the browser's native Web Crypto API (AES-256-GCM with PBKDF2 key derivation) to securely password-protect files locally.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can OnlyFiles or an attacker decrypt my file without the password?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. We use standard AES-256-GCM encryption with 250,000 PBKDF2 iterations. Without your exact password, the encrypted file is mathematically indistinguishable from random noise."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the recipient decrypt the file?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Send the encrypted .enc file to your recipient via email or message. They can visit onlyfiles.in, drop the .enc file into the Decrypt tool, enter the password you shared with them, and save the original file."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+  :root{
+    --bg:#0c1512;
+    --surface:#121e19;
+    --surface-2:#182a22;
+    --surface-3:#1e352b;
+    --border:#25392f;
+    --text:#eef4f0;
+    --text-dim:#9db3a7;
+    --text-faint:#6d8579;
+    --accent:#5eead4;
+    --accent-strong:#2dd4bf;
+    --accent-ink:#04201b;
+    --gold:#f2c879;
+    --gold-ink:#2b1d02;
+    --danger:#f87171;
+    --font-display:'Fraunces', ui-serif, Georgia, serif;
+    --font-body:'Manrope', ui-sans-serif, system-ui, sans-serif;
+    --font-mono:'JetBrains Mono', ui-monospace, monospace;
+    --radius-m:12px;
+    --radius-l:18px;
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --bg:#f3f7f4; --surface:#ffffff; --surface-2:#eaf1ec; --surface-3:#dfe9e2; --border:#d7e3dc;
+      --text:#0f1f19; --text-dim:#4c6156; --text-faint:#7c9188;
+      --accent:#0d9488; --accent-strong:#0f766e; --accent-ink:#f3fffb;
+      --gold:#b5791a; --gold-ink:#fffaf0;
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#f3f7f4; --surface:#ffffff; --surface-2:#eaf1ec; --surface-3:#dfe9e2; --border:#d7e3dc;
+    --text:#0f1f19; --text-dim:#4c6156; --text-faint:#7c9188;
+    --accent:#0d9488; --accent-strong:#0f766e; --accent-ink:#f3fffb;
+    --gold:#b5791a; --gold-ink:#fffaf0;
+  }
+  :root[data-theme="dark"]{
+    --bg:#0c1512; --surface:#121e19; --surface-2:#182a22; --surface-3:#1e352b; --border:#25392f;
+    --text:#eef4f0; --text-dim:#9db3a7; --text-faint:#6d8579;
+    --accent:#5eead4; --accent-strong:#2dd4bf; --accent-ink:#04201b;
+    --gold:#f2c879; --gold-ink:#2b1d02;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{background:var(--bg);color:var(--text);font:15px/1.6 var(--font-body);-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px;}
+  a{color:var(--accent-strong);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  header.nav{border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;backdrop-filter:blur(8px);}
+  .nav-inner{max-width:1120px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  .brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:600;font-size:18px;color:var(--text);text-decoration:none;}
+  .navlinks{display:flex;align-items:center;gap:18px;}
+  .navlinks a{font-size:13.5px;font-weight:600;color:var(--text-dim);}
+  .navlinks a:hover{color:var(--text);text-decoration:none;}
+
+  .btn{font-family:var(--font-body);font-weight:700;font-size:14px;border-radius:999px;border:1px solid transparent;padding:10px 18px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .15s ease;text-decoration:none;white-space:nowrap;}
+  .btn:active{transform:translateY(1px);}
+  .btn-gold{background:var(--gold);color:var(--gold-ink);}
+  .btn-gold:hover{box-shadow:0 6px 20px -6px color-mix(in srgb, var(--gold) 65%, transparent);text-decoration:none;}
+  .btn-primary{background:var(--accent);color:var(--accent-ink);}
+  .btn-primary:hover{background:var(--accent-strong);text-decoration:none;}
+  .btn-ghost{background:transparent;color:var(--text);border-color:var(--border);}
+  .btn-ghost:hover{border-color:var(--text-faint);text-decoration:none;}
+  .btn-block{width:100%;justify-content:center;}
+
+  .breadcrumbs{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-faint);margin:24px 0 16px;font-family:var(--font-mono);}
+  .breadcrumbs a{color:var(--text-dim);}
+  .breadcrumbs .sep{opacity:.5;}
+  .breadcrumbs .current{color:var(--text);font-weight:600;}
+
+  .hero{padding:20px 0 40px;text-align:center;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dim);background:var(--surface-2);border:1px solid var(--border);padding:5px 12px;border-radius:999px;margin-bottom:16px;}
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);}
+  h1{font-family:var(--font-display);font-size:clamp(30px,4.5vw,46px);font-weight:600;margin:0 0 16px;line-height:1.15;}
+  h1 em{font-style:italic;color:var(--accent);}
+  .lede{font-size:17px;color:var(--text-dim);max-width:680px;margin:0 auto 32px;}
+
+  /* Tool Interface Card */
+  .tool-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-l);padding:28px;max-width:640px;margin:0 auto 60px;box-shadow:0 12px 36px -12px rgba(0,0,0,0.3);}
+  .dropzone{border:2px dashed var(--border);border-radius:var(--radius-m);padding:36px 20px;text-align:center;cursor:pointer;transition:border-color .15s ease, background .15s ease;}
+  .dropzone:hover,.dropzone.dragover{border-color:var(--accent);background:var(--surface-2);}
+  .dropzone svg{color:var(--accent);margin-bottom:12px;}
+  .dz-title{font-weight:700;font-size:16px;margin-bottom:4px;}
+  .dz-sub{font-size:13px;color:var(--text-faint);}
+  .dz-file-input{display:none;}
+  
+  .input-field{width:100%;font:inherit;font-size:14px;background:var(--surface-2);border:1px solid var(--border);color:var(--text);padding:10px 14px;border-radius:8px;outline:none;margin-top:8px;}
+  .input-field:focus{border-color:var(--accent-strong);}
+
+  .result-banner{margin-top:18px;padding:14px;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-m);display:none;align-items:center;justify-content:space-between;gap:12px;}
+  .res-info{font-size:13px;font-family:var(--font-mono);}
+
+  /* Content Sections */
+  .content-section{padding:40px 0;border-top:1px solid var(--border);}
+  .content-section h2{font-family:var(--font-display);font-size:26px;margin:0 0 16px;}
+  .content-section h3{font-family:var(--font-display);font-size:20px;margin:24px 0 10px;}
+  .content-section p{color:var(--text-dim);font-size:15px;line-height:1.7;}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:28px 0;}
+  @media(max-width:700px){.grid-2{grid-template-columns:1fr;}}
+  .feature-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-m);padding:20px;}
+  .feature-box h4{margin:0 0 8px;font-size:16px;color:var(--text);}
+  .feature-box p{margin:0;font-size:14px;color:var(--text-faint);}
+
+  /* FAQ Accordion */
+  .faq-item{border-bottom:1px solid var(--border);padding:18px 0;}
+  .faq-item:first-of-type{border-top:1px solid var(--border);}
+  .faq-q{font-weight:700;font-size:16px;color:var(--text);cursor:pointer;}
+  .faq-a{margin-top:10px;color:var(--text-dim);font-size:14.5px;line-height:1.6;}
+
+  footer{border-top:1px solid var(--border);padding:40px 0;margin-top:40px;}
+  .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;}
+  .footer-links{display:flex;gap:16px;font-size:13px;flex-wrap:wrap;}
+  .footer-links a{color:var(--text-dim);}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/">
+      <svg width="24" height="24" viewBox="0 0 104 104" aria-hidden="true">
+        <circle cx="52" cy="52" r="50" fill="#16171a"/>
+        <rect x="29" y="42" width="46" height="11" rx="5.5" fill="#ffffff"/>
+      </svg>
+      OnlyFiles
+    </a>
+    <nav class="navlinks">
+      <a href="/#appShell">All Tools</a>
+      <a href="/compress-pdf">Compress PDF</a>
+      <a href="/compress-image">Compress Image</a>
+      <a href="/merge-pdf">Merge PDF</a>
+      <a href="/#pricing" class="btn btn-gold" style="padding:6px 14px;font-size:12.5px;">Unlock Pro</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="breadcrumbs">
+    <a href="/">Home</a><span class="sep">/</span><span class="current">Security Vault</span>
+  </div>
+
+  <section class="hero">
+    <span class="eyebrow"><span class="dot"></span>Zero-Knowledge &middot; Web Crypto API</span>
+    <h1>In-Browser File Encryption <em>(AES-256-GCM)</em></h1>
+    <p class="lede">Password-protect any file locally using military-grade AES-256-GCM cryptography. Your password and data are never sent to OnlyFiles or any server.</p>
+
+    <!-- Interactive In-Browser Encryptor Tool -->
+    <div class="tool-card">
+      <div class="dropzone" id="encDropzone" tabindex="0">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+        </svg>
+        <div class="dz-title">Drop any file here to encrypt</div>
+        <div class="dz-sub">PDF, image, video, spreadsheet, or archive.</div>
+        <input type="file" id="encInput" class="dz-file-input">
+      </div>
+
+      <div id="encControls" style="display:none;margin-top:16px;text-align:left;">
+        <label style="font-size:12px;font-family:var(--font-mono);text-transform:uppercase;color:var(--text-faint);">Create a Secret Password</label>
+        <input type="password" id="encPass" class="input-field" placeholder="Enter a strong passphrase">
+        <button class="btn btn-primary btn-block" id="encActionBtn" style="margin-top:14px;">Encrypt File Now</button>
+      </div>
+
+      <div class="result-banner" id="encResult">
+        <div class="res-info">File encrypted with AES-256-GCM!</div>
+        <button class="btn btn-primary" id="encDownloadBtn">Download .enc File</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Depth -->
+  <section class="content-section">
+    <h2>How OnlyFiles Zero-Knowledge Encryption Works</h2>
+    <p>Most file-sharing services that offer password protection perform encryption on their servers, which means they hold the keys and can decrypt your files on request or suffer catastrophic server-side leaks.</p>
+    <p><strong>OnlyFiles operates on a true Zero-Knowledge model:</strong> We use the browser's native, hardware-accelerated <code>window.crypto.subtle</code> API. When you supply a password:</p>
+    <p>1. A random 16-byte salt is generated via cryptographically secure random values.</p>
+    <p>2. Your password is stretched into a 256-bit encryption key using PBKDF2 with 250,000 SHA-256 rounds.</p>
+    <p>3. The file is encrypted using AES-GCM with a fresh 12-byte initialization vector (IV), providing both privacy and tamper-proof authentication.</p>
+
+    <div class="grid-2">
+      <div class="feature-box">
+        <h4>🔒 Mathematically Unbreakable</h4>
+        <p>AES-256 is the standard trusted by security agencies and banks globally. Brute forcing is computationally impossible.</p>
+      </div>
+      <div class="feature-box">
+        <h4>🚫 Zero-Knowledge Design</h4>
+        <p>We never see your password, key, or unencrypted file bytes. If subpoenaed, we have nothing to provide.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="content-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">What happens if I forget the password?</div>
+      <div class="faq-a">Because OnlyFiles never stores your password or retains a master key, forgotten passwords cannot be recovered. Ensure you remember or safely record your passphrase.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How does the recipient decrypt the document?</div>
+      <div class="faq-a">They simply open OnlyFiles, drag the .enc file into the Decrypt tool on the homepage, and enter the password you provided. The original file is restored instantly in their browser without an account.</div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <p>&copy; 2026 OnlyFiles &middot; Private, on-device file tools.</p>
+    <div class="footer-links">
+      <a href="/#appShell">All Tools</a>
+      <a href="/compress-pdf">Compress PDF</a>
+      <a href="/merge-pdf">Merge PDF</a>
+      <a href="/compress-image">Compress Image</a>
+      <a href="/resize-image">Resize Image</a>
+      <a href="/webp-to-png">WebP to PNG</a>
+      <a href="/jpg-to-png">JPG to PNG</a>
+      <a href="/compress-video">Compress Video</a>
+      <a href="/security-vault">Security Vault</a>
+      <a href="/about">About</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+      <a href="mailto:hello@onlyfiles.in">hello@onlyfiles.in</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var dropzone = document.getElementById('encDropzone');
+  var input = document.getElementById('encInput');
+  var controls = document.getElementById('encControls');
+  var passInput = document.getElementById('encPass');
+  var actionBtn = document.getElementById('encActionBtn');
+  var resultBanner = document.getElementById('encResult');
+  var downloadBtn = document.getElementById('encDownloadBtn');
+  var currentFile = null;
+  var encryptedBlob = null;
+
+  dropzone.addEventListener('click', function(){ input.click(); });
+  dropzone.addEventListener('dragover', function(e){ e.preventDefault(); dropzone.classList.add('dragover'); });
+  dropzone.addEventListener('dragleave', function(){ dropzone.classList.remove('dragover'); });
+  dropzone.addEventListener('drop', function(e){
+    e.preventDefault(); dropzone.classList.remove('dragover');
+    if (e.dataTransfer.files && e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+  });
+  input.addEventListener('change', function(){
+    if (input.files && input.files[0]) handleFile(input.files[0]);
+  });
+
+  function handleFile(f){
+    currentFile = f;
+    dropzone.querySelector('.dz-title').textContent = f.name + ' (' + (f.size/(1024*1024)).toFixed(2) + ' MB)';
+    controls.style.display = 'block';
+    resultBanner.style.display = 'none';
+  }
+
+  actionBtn.addEventListener('click', async function(){
+    var password = passInput.value;
+    if (!password) { alert('Please enter an encryption password.'); return; }
+    actionBtn.disabled = true; actionBtn.textContent = 'Encrypting with AES-256-GCM...';
+
+    try {
+      var enc = new TextEncoder();
+      var fileBytes = await currentFile.arrayBuffer();
+      var salt = crypto.getRandomValues(new Uint8Array(16));
+      var iv = crypto.getRandomValues(new Uint8Array(12));
+
+      var keyMaterial = await crypto.subtle.importKey('raw', enc.encode(password), 'PBKDF2', false, ['deriveKey']);
+      var key = await crypto.subtle.deriveKey(
+        { name: 'PBKDF2', salt: salt, iterations: 250000, hash: 'SHA-256' },
+        keyMaterial,
+        { name: 'AES-GCM', length: 256 },
+        false,
+        ['encrypt']
+      );
+
+      var ciphertext = await crypto.subtle.encrypt({ name: 'AES-GCM', iv: iv }, key, fileBytes);
+
+      // Package: MAGIC(4) + Salt(16) + IV(12) + Ciphertext
+      var magic = enc.encode('OFV1');
+      var combined = new Uint8Array(4 + 16 + 12 + ciphertext.byteLength);
+      combined.set(magic, 0);
+      combined.set(salt, 4);
+      combined.set(iv, 20);
+      combined.set(new Uint8Array(ciphertext), 32);
+
+      encryptedBlob = new Blob([combined], { type: 'application/octet-stream' });
+      resultBanner.style.display = 'flex';
+    } catch(err) {
+      alert('Encryption failed: ' + err.message);
+    } finally {
+      actionBtn.disabled = false; actionBtn.textContent = 'Encrypt File Now';
+    }
+  });
+
+  downloadBtn.addEventListener('click', function(){
+    if (!encryptedBlob) return;
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(encryptedBlob);
+    a.download = currentFile.name + '.enc';
+    a.click();
+  });
+})();
+</script>
+</body>
+</html>

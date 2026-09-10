@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Page Not Found — OnlyFiles</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="512x512" href="/logo-512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/logo-512.png">
+<meta name="robots" content="noindex,follow">
+<meta name="description" content="This page doesn't exist on OnlyFiles. Get back to the free, private, on-device file tools.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OnlyFiles">
+<meta property="og:title" content="Page Not Found — OnlyFiles">
+<meta property="og:description" content="This page doesn't exist on OnlyFiles. Get back to the free, private, on-device file tools.">
+<meta property="og:url" content="https://onlyfiles.in/404.html">
+<meta property="og:image" content="https://onlyfiles.in/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Page Not Found — OnlyFiles">
+<meta name="twitter:image" content="https://onlyfiles.in/og-image.png">
+<script>
+  try{
+    var t = localStorage.getItem('onlyfiles-theme');
+    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+  }catch(e){}
+</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap');
+
+  :root{
+    --bg:#0c1512;
+    --surface:#121e19;
+    --surface-2:#182a22;
+    --surface-3:#1e352b;
+    --border:#25392f;
+    --text:#eef4f0;
+    --text-dim:#9db3a7;
+    --text-faint:#6d8579;
+    --accent:#5eead4;
+    --accent-strong:#2dd4bf;
+    --accent-ink:#04201b;
+    --gold:#f2c879;
+    --gold-ink:#2b1d02;
+    --font-display:'Fraunces', ui-serif, Georgia, 'Times New Roman', serif;
+    --font-body:'Manrope', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font-mono:'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --bg:#f3f7f4; --surface:#ffffff; --surface-2:#eaf1ec; --surface-3:#dfe9e2; --border:#d7e3dc;
+      --text:#0f1f19; --text-dim:#4c6156; --text-faint:#7c9188;
+      --accent:#0d9488; --accent-strong:#0f766e; --accent-ink:#f3fffb;
+      --gold:#b5791a; --gold-ink:#fffaf0;
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#f3f7f4; --surface:#ffffff; --surface-2:#eaf1ec; --surface-3:#dfe9e2; --border:#d7e3dc;
+    --text:#0f1f19; --text-dim:#4c6156; --text-faint:#7c9188;
+    --accent:#0d9488; --accent-strong:#0f766e; --accent-ink:#f3fffb;
+    --gold:#b5791a; --gold-ink:#fffaf0;
+  }
+  :root[data-theme="dark"]{
+    --bg:#0c1512; --surface:#121e19; --surface-2:#182a22; --surface-3:#1e352b; --border:#25392f;
+    --text:#eef4f0; --text-dim:#9db3a7; --text-faint:#6d8579;
+    --accent:#5eead4; --accent-strong:#2dd4bf; --accent-ink:#04201b;
+    --gold:#f2c879; --gold-ink:#2b1d02;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{background:var(--bg);color:var(--text);font:15px/1.6 var(--font-body);-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px;}
+  a{color:var(--accent-strong);}
+  img{max-width:100%;}
+
+  header.nav{border-bottom:1px solid var(--border);}
+  .nav-inner{max-width:1120px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+  .brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:600;font-size:18px;color:var(--text);text-decoration:none;}
+  .navlinks{display:flex;align-items:center;gap:18px;flex-wrap:wrap;}
+  .navlinks a.navlink{font-size:13.5px;font-weight:600;color:var(--text-dim);text-decoration:none;}
+  .navlinks a.navlink:hover{color:var(--text);}
+
+  .btn{font-family:var(--font-body);font-weight:700;font-size:14.5px;border-radius:999px;border:1px solid transparent;padding:11px 20px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:transform .15s ease, box-shadow .15s ease, background .15s ease, opacity .15s ease;white-space:nowrap;text-decoration:none;}
+  .btn:active{transform:translateY(1px);}
+  .btn-gold{background:var(--gold);color:var(--gold-ink);}
+  .btn-gold:hover{box-shadow:0 8px 24px -8px color-mix(in srgb, var(--gold) 65%, transparent);}
+  .btn-ghost{background:transparent;color:var(--text);border-color:var(--border);}
+  .btn-ghost:hover{border-color:var(--text-faint);}
+
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dim);background:var(--surface-2);border:1px solid var(--border);padding:6px 12px;border-radius:999px;}
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none;}
+
+  main{padding:40px 0 80px;}
+
+  .breadcrumbs{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-faint);margin-bottom:28px;flex-wrap:wrap;}
+  .breadcrumbs a{color:var(--text-dim);text-decoration:none;}
+  .breadcrumbs a:hover{color:var(--text);}
+  .breadcrumbs .sep{color:var(--text-faint);}
+  .breadcrumbs .current{color:var(--text);font-weight:600;}
+
+  .error-block{text-align:center;padding:20px 0 44px;border-bottom:1px solid var(--border);margin-bottom:44px;}
+  .error-code{font-family:var(--font-mono);font-size:14px;font-weight:600;letter-spacing:.08em;color:var(--text-faint);margin:18px 0 6px;}
+  h1{font-family:var(--font-display);font-weight:600;font-size:clamp(30px,4.4vw,42px);margin:0 0 14px;}
+  .error-block p{color:var(--text-dim);max-width:520px;margin:0 auto 28px;font-size:15px;}
+  .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+
+  .find-tools{margin-bottom:52px;}
+  .find-tools h2{font-family:var(--font-display);font-weight:600;font-size:20px;margin:0 0 4px;text-align:center;}
+  .find-tools .sub{color:var(--text-faint);font-size:13.5px;text-align:center;margin:0 0 20px;}
+  .search-field{position:relative;max-width:440px;margin:0 auto;}
+  .search-field input{width:100%;font:inherit;font-size:14.5px;background:var(--surface);border:1px solid var(--border);color:var(--text);border-radius:999px;padding:12px 18px 12px 42px;outline:none;transition:border-color .15s ease;}
+  .search-field input:focus{border-color:var(--accent-strong);}
+  .search-field svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--text-faint);pointer-events:none;}
+
+  .link-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px;}
+  @media (max-width:720px){ .link-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:480px){ .link-grid{grid-template-columns:1fr;} }
+  .link-card{display:flex;align-items:flex-start;gap:12px;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;text-decoration:none;color:var(--text);transition:border-color .15s ease, transform .15s ease;}
+  .link-card:hover{border-color:var(--text-faint);transform:translateY(-1px);}
+  .link-card .ic{flex:none;width:34px;height:34px;border-radius:10px;background:var(--surface-2);display:flex;align-items:center;justify-content:center;color:var(--accent-strong);}
+  .link-card .lc-title{display:block;font-weight:700;font-size:14px;margin:0 0 3px;}
+  .link-card .lc-desc{display:block;font-size:12.5px;color:var(--text-faint);margin:0;}
+  .no-results{display:none;text-align:center;color:var(--text-faint);font-size:13.5px;padding:24px 0;}
+  .no-results.show{display:block;}
+
+  footer{border-top:1px solid var(--border);padding:32px 0;}
+  .footer-inner{max-width:1120px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+  .footer-inner p{color:var(--text-faint);font-size:13px;margin:0;}
+  .footer-links{display:flex;gap:20px;font-size:13px;color:var(--text-dim);flex-wrap:wrap;}
+  .footer-links a{text-decoration:none;}
+  .footer-links a:hover{color:var(--text);}
+
+  @media (prefers-reduced-motion: reduce){ *{transition:none !important;} }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/">
+      <svg width="24" height="24" viewBox="0 0 104 104" aria-hidden="true">
+        <circle cx="52" cy="52" r="50" fill="#16171a"/>
+        <rect x="29" y="42" width="46" height="11" rx="5.5" fill="#ffffff"/>
+        <rect x="32" y="55" width="40" height="11" rx="5.5" fill="#8f8f90"/>
+      </svg>
+      OnlyFiles
+    </a>
+    <nav class="navlinks">
+      <a class="navlink" href="/#appShell">Tools</a>
+      <a class="navlink" href="/#pricing">Pricing</a>
+      <a class="navlink" href="/#faq">FAQ</a>
+      <a class="btn btn-ghost" href="/" style="padding:8px 14px;font-size:13px;">&larr; Back to OnlyFiles</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="sep">/</span>
+      <span class="current">Page not found</span>
+    </nav>
+
+    <div class="error-block">
+      <span class="eyebrow"><span class="dot"></span>Error 404</span>
+      <div class="error-code">404</div>
+      <h1>This page didn't survive the trip.</h1>
+      <p>Everything else on OnlyFiles still runs — the link you followed just doesn't point anywhere anymore. No files were lost, because none ever left your device in the first place.</p>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="/">Go to homepage</a>
+        <a class="btn btn-ghost" href="/#appShell">Browse all tools</a>
+      </div>
+    </div>
+
+    <div class="find-tools">
+      <h2>Looking for something specific?</h2>
+      <p class="sub">Search or jump straight to a tool category below.</p>
+      <div class="search-field">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" id="linkFilter" placeholder="Search tools — compress, merge, encrypt, watermark…" autocomplete="off">
+      </div>
+
+      <div class="link-grid" id="linkGrid">
+        <a class="link-card" href="/#appShell" data-keywords="image studio compress resize convert crop background remover filters effects photo blur pixelate upscale collage">
+          <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg></span>
+          <span><span class="lc-title">Image Studio</span><span class="lc-desc">Compress, resize, convert &amp; crop photos</span></span>
+        </a>
+        <a class="link-card" href="/#appShell" data-keywords="pdf studio merge split rotate watermark compress convert">
+          <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span>
+          <span><span class="lc-title">PDF Studio</span><span class="lc-desc">Merge, split, rotate &amp; watermark PDFs</span></span>
+        </a>
+        <a class="link-card" href="/#appShell" data-keywords="video audio studio compress convert trim mute">
+          <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 8-6 4 6 4V8Z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg></span>
+          <span><span class="lc-title">Video &amp; Audio</span><span class="lc-desc">Compress and convert clips on-device</span></span>
+        </a>
+        <a class="link-card" href="/#appShell" data-keywords="security vault encrypt password protect scrub metadata gps exif">
+          <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></span>
+          <span><span class="lc-title">Security Vault</span><span class="lc-desc">Encrypt files &amp; scrub hidden metadata</span></span>
+        </a>
+        <a class="link-card" href="/#appShell" data-keywords="utilities qr code batch rename file tools">
+          <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg></span>
+          <span><span class="lc-title">Utilities</span><span class="lc-desc">QR codes, batch renaming &amp; more</span></span>
+        </a>
+        <a class="link-card" href="/#appShell" data-keywords="photo effects filters blur pixelate background remover enhance upscale collage maker">
+          <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2a10 10 0 1 0 10 10c0-1-1-2-2-2h-2a2 2 0 0 1-2-2v-1a2 2 0 0 1 2-2h1c1 0 2-1 2-2a10 10 0 0 0-9-3Z"/></svg></span>
+          <span><span class="lc-title">Photo Effects</span><span class="lc-desc">Filters, upscaler, background remover &amp; collage</span></span>
+        </a>
+        <a class="link-card" href="/#pricing" data-keywords="pricing pro upgrade unlock cost price">
+          <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M15 9.5c0-1.4-1.3-2.5-3-2.5s-3 1.1-3 2.5 1.3 2.5 3 2.5 3 1.1 3 2.5-1.3 2.5-3 2.5-3-1.1-3-2.5"/></svg></span>
+          <span><span class="lc-title">Pricing</span><span class="lc-desc">Free tools plus a $4.99 one-time Pro unlock</span></span>
+        </a>
+        <a class="link-card" href="/#faq" data-keywords="faq questions help support">
+          <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2-3 4"/><path d="M12 17h.01"/></svg></span>
+          <span><span class="lc-title">FAQ</span><span class="lc-desc">Common questions about OnlyFiles</span></span>
+        </a>
+        <a class="link-card" href="/privacy-policy.html" data-keywords="privacy policy data account">
+          <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+          <span><span class="lc-title">Privacy Policy</span><span class="lc-desc">How OnlyFiles handles your data</span></span>
+        </a>
+        <a class="link-card" href="/terms-and-conditions.html" data-keywords="terms conditions legal refund agreement">
+          <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg></span>
+          <span><span class="lc-title">Terms &amp; Conditions</span><span class="lc-desc">The agreement for using OnlyFiles</span></span>
+        </a>
+      </div>
+      <p class="no-results" id="noResults">No tools match that search — <a href="/#appShell">browse everything</a> instead.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <p>&copy; 2026 OnlyFiles &middot; Files never leave your device.</p>
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/#appShell">Tools</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/privacy-policy.html">Privacy Policy</a>
+      <a href="/terms-and-conditions.html">Terms &amp; Conditions</a>
+      <a href="mailto:hello@onlyfiles.in">hello@onlyfiles.in</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var input = document.getElementById('linkFilter');
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.link-card'));
+    var noResults = document.getElementById('noResults');
+    input.addEventListener('input', function(){
+      var q = input.value.trim().toLowerCase();
+      var visible = 0;
+      cards.forEach(function(card){
+        var hay = (card.getAttribute('data-keywords') || '') + ' ' + card.textContent;
+        var match = hay.toLowerCase().indexOf(q) !== -1;
+        card.style.display = match ? '' : 'none';
+        if (match) visible++;
+      });
+      noResults.classList.toggle('show', visible === 0);
+    });
+  })();
+</script>
+
+</body>
+</html>
