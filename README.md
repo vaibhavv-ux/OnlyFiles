@@ -1,10 +1,11 @@
 # OnlyFiles — Private, Browser-Based File Processing Studio
 
 [![Website](https://img.shields.io/badge/Website-onlyfiles.in-0d9488?style=for-the-badge)](https://onlyfiles.in)
-[![License](https://img.shields.io/badge/License-Proprietary-gold?style=for-the-badge)](https://onlyfiles.in/terms-and-conditions)
+[![Access](https://img.shields.io/badge/Access-100%25_Free-brightgreen?style=for-the-badge)](https://onlyfiles.in)
+[![Account](https://img.shields.io/badge/Account-Not_Required-blue?style=for-the-badge)](https://onlyfiles.in)
 [![Privacy](https://img.shields.io/badge/Privacy-100%25_On--Device-5eead4?style=for-the-badge)](https://onlyfiles.in/privacy-policy)
 
-> **[OnlyFiles](https://onlyfiles.in)** is an all-in-one browser toolkit for compressing, converting, merging, and encrypting PDFs, images, and videos. Every tool runs **100% client-side** in your web browser — your files are never uploaded to any remote server.
+> **[OnlyFiles](https://onlyfiles.in)** is an all-in-one, 100% free browser toolkit for compressing, converting, merging, and encrypting PDFs, images, and videos. Every tool runs **100% client-side** in your web browser — your files are never uploaded to any remote server.
 
 ---
 
