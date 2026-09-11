@@ -527,7 +527,6 @@
     </div>
     <nav class="navlinks">
       <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle light and dark theme"></button>
-      <button class="btn btn-ghost" id="authNavBtn" type="button" style="padding:8px 14px;font-size:13px;">Sign in</button>
       <button class="btn btn-gold" id="navCta">Explore Tools</button>
     </nav>
   </div>
@@ -1263,47 +1262,10 @@
   </div>
 </footer>
 
-<!-- AUTH MODAL -->
-<dialog id="authModal">
-  <div class="modal-body">
-    <div class="modal-head"><h3 id="authModalTitle">Sign in</h3><button class="modal-close" id="authModalClose" aria-label="Close sign-in">&times;</button></div>
-    <div id="authFormsWrap">
-      <div class="cat-tabs" id="authTabs" style="margin-bottom:18px;">
-        <button class="tab-btn active" data-auth-target="signin" type="button">Sign in</button>
-        <button class="tab-btn" data-auth-target="signup" type="button">Sign up</button>
-      </div>
-      <div class="auth-panel" data-auth-panel="signin">
-        <div class="field"><label for="signinEmail">Email</label><input type="email" id="signinEmail" placeholder="you@example.com" autocomplete="email"></div>
-        <div class="field"><label for="signinPassword">Password</label><input type="password" id="signinPassword" placeholder="••••••••" autocomplete="current-password"></div>
-        <button class="btn btn-gold btn-block" id="signinSubmit" type="button" style="margin-top:18px;">Sign in</button>
-      </div>
-      <div class="auth-panel" data-auth-panel="signup" hidden>
-        <div class="field"><label for="signupEmail">Email</label><input type="email" id="signupEmail" placeholder="you@example.com" autocomplete="email"></div>
-        <div class="field"><label for="signupPassword">Password</label><input type="password" id="signupPassword" placeholder="At least 6 characters" autocomplete="new-password"></div>
-        <button class="btn btn-gold btn-block" id="signupSubmit" type="button" style="margin-top:18px;">Create account</button>
-      </div>
-      <div class="auth-divider"><span>or</span></div>
-      <div id="gsiButtonWrapper" style="display:flex;justify-content:center;width:100%;min-height:44px;margin-bottom:6px;"></div>
-      <button class="btn btn-ghost btn-block" id="googleAuthBtn" type="button">
-        <svg width="17" height="17" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.6-6 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.1 8 3l6-6C34.6 5.1 29.6 3 24 3 12.4 3 3 12.4 3 24s9.4 21 21 21 21-9.4 21-21c0-1.2-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.6 15.9 18.9 13 24 13c3.1 0 5.8 1.1 8 3l6-6C34.6 5.1 29.6 3 24 3 16.3 3 9.7 7.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 45c5.5 0 10.4-1.9 14.2-5.1l-6.6-5.4C29.7 36.4 27 37.3 24 37.3c-5.3 0-9.7-3.4-11.3-8.1l-6.5 5C9.6 40.6 16.3 45 24 45z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.2 4.2-4.1 5.6l6.6 5.4C41.4 35.9 45 30.5 45 24c0-1.2-.1-2.4-.4-3.5z"/></svg>
-        Continue with Google
-      </button>
-      <p class="modal-note error" id="authError" hidden></p>
-    </div>
-    <div class="modal-success" id="authSuccess">
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 2.5 2.5L16 9.5"/></svg>
-      <h4>Check your inbox</h4>
-      <p>We sent a confirmation link to your email. Click it to finish creating your account, then come back and sign in.</p>
-    </div>
-  </div>
-</dialog>
-
 <div class="toast" id="toast"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
-<script src="https://accounts.google.com/gsi/client" async defer></script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.116.0/dist/umd/supabase.js"></script>
 <script>
 (function(){
   "use strict";
@@ -1526,193 +1488,8 @@
     'data-cat-target', 'data-cat-panel'
   );
 
-  // ================= Auth (Supabase) =================
-  var SUPABASE_URL = 'https://ldtyhmoxqatghifnjumk.supabase.co';
-  var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxkdHlobW94cWF0Z2hpZm5qdW1rIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODkwMDI5NzgsImV4cCI6MjEwNDU3ODk3OH0.ot6bjLA21u_coxPJrsij11Ne0KuxMvgyqIHBozTGTPw';
-  var supabaseClient = null;
-  try {
-    if (window.supabase && typeof window.supabase.createClient === 'function') {
-      supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-    }
-  } catch(e){ supabaseClient = null; }
-
-  var authDialog = document.getElementById('authModal');
-  var authNavBtn = document.getElementById('authNavBtn');
-  var authFormsWrap = document.getElementById('authFormsWrap');
-  var authSuccessEl = document.getElementById('authSuccess');
-  var authErrorEl = document.getElementById('authError');
-
-  function authShowError(msg){
-    if (!authErrorEl) return;
-    authErrorEl.textContent = msg;
-    authErrorEl.hidden = false;
-  }
-  function authClearError(){
-    if (!authErrorEl) return;
-    authErrorEl.hidden = true;
-    authErrorEl.textContent = '';
-  }
-  function openAuthModal(){
-    authClearError();
-    if (authSuccessEl) authSuccessEl.classList.remove('show');
-    if (authFormsWrap) authFormsWrap.style.display = '';
-    renderGoogleButton();
-    if (!supabaseClient) authShowError('Sign-in isn’t connected on this preview yet.');
-    if (authDialog && typeof authDialog.showModal === 'function') authDialog.showModal();
-  }
-  function setAuthNavUI(session){
-    if (!authNavBtn) return;
-    if (session && session.user) {
-      var isPro = (session.user.email && session.user.email.toLowerCase() === 'vmidha98@gmail.com') || isUnlocked();
-      authNavBtn.textContent = session.user.email ? ('Sign out (' + session.user.email.split('@')[0] + (isPro ? ' · PRO' : '') + ')') : 'Sign out';
-      authNavBtn.dataset.mode = 'out';
-      authNavBtn.title = session.user.email || '';
-    } else {
-      authNavBtn.textContent = 'Sign in';
-      authNavBtn.dataset.mode = 'in';
-      authNavBtn.removeAttribute('title');
-    }
-  }
-
-  if (authNavBtn) authNavBtn.addEventListener('click', function(){
-    if (authNavBtn.dataset.mode === 'out') {
-      if (supabaseClient) supabaseClient.auth.signOut();
-    } else {
-      openAuthModal();
-    }
-  });
-  var authModalCloseBtn = document.getElementById('authModalClose');
-  if (authModalCloseBtn) authModalCloseBtn.addEventListener('click', function(){ authDialog.close(); });
-  if (authDialog) authDialog.addEventListener('click', function(e){ if (e.target === authDialog) authDialog.close(); });
-
-  initTabGroup(
-    document.querySelectorAll('#authTabs .tab-btn'),
-    document.querySelectorAll('.auth-panel'),
-    'data-auth-target', 'data-auth-panel'
-  );
-
-  if (supabaseClient) {
-    supabaseClient.auth.getSession().then(function(res){
-      setAuthNavUI(res && res.data ? res.data.session : null);
-    }).catch(function(){});
-    refreshProStatusFromServer();
-    supabaseClient.auth.onAuthStateChange(function(event, session){
-      setAuthNavUI(session);
-      refreshProStatusFromServer();
-      if (event === 'SIGNED_IN' && authDialog && authDialog.open) authDialog.close();
-    });
-  } else {
-    applyUnlockUI();
-  }
-
-  var signinSubmit = document.getElementById('signinSubmit');
-  if (signinSubmit) signinSubmit.addEventListener('click', function(){
-    authClearError();
-    if (!supabaseClient) { authShowError('Sign-in isn’t connected on this preview yet.'); return; }
-    var email = (document.getElementById('signinEmail').value || '').trim();
-    var password = document.getElementById('signinPassword').value || '';
-    if (!email || !password) { authShowError('Enter your email and password.'); return; }
-    signinSubmit.disabled = true; var origTxt = signinSubmit.textContent; signinSubmit.textContent = 'Signing in…';
-    supabaseClient.auth.signInWithPassword({ email: email, password: password }).then(function(res){
-      signinSubmit.disabled = false; signinSubmit.textContent = origTxt;
-      if (res.error) { authShowError(res.error.message); return; }
-      authDialog.close();
-    }).catch(function(){
-      signinSubmit.disabled = false; signinSubmit.textContent = origTxt;
-      authShowError('Something went wrong. Try again.');
-    });
-  });
-
-  var signupSubmit = document.getElementById('signupSubmit');
-  if (signupSubmit) signupSubmit.addEventListener('click', function(){
-    authClearError();
-    if (!supabaseClient) { authShowError('Sign-up isn’t connected on this preview yet.'); return; }
-    var email = (document.getElementById('signupEmail').value || '').trim();
-    var password = document.getElementById('signupPassword').value || '';
-    if (!email || !password) { authShowError('Enter your email and password.'); return; }
-    if (password.length < 6) { authShowError('Password should be at least 6 characters.'); return; }
-    signupSubmit.disabled = true; var origTxt2 = signupSubmit.textContent; signupSubmit.textContent = 'Creating account…';
-    supabaseClient.auth.signUp({ email: email, password: password }).then(function(res){
-      signupSubmit.disabled = false; signupSubmit.textContent = origTxt2;
-      if (res.error) { authShowError(res.error.message); return; }
-      var session = res.data && res.data.session;
-      if (session) {
-        authDialog.close();
-      } else {
-        if (authFormsWrap) authFormsWrap.style.display = 'none';
-        if (authSuccessEl) authSuccessEl.classList.add('show');
-      }
-    }).catch(function(){
-      signupSubmit.disabled = false; signupSubmit.textContent = origTxt2;
-      authShowError('Something went wrong. Try again.');
-    });
-  });
-
-  var GOOGLE_CLIENT_ID = '480800219588-au8tpvqtu1c5ggi8uo45g8cuqc6qeut4.apps.googleusercontent.com';
-  var googleAuthBtn = document.getElementById('googleAuthBtn');
-  var gsiWrapper = document.getElementById('gsiButtonWrapper');
-  var gsiReady = false;
-
-  function renderGoogleButton() {
-    if (gsiReady) return;
-    if (window.google && window.google.accounts && window.google.accounts.id) {
-      try {
-        window.google.accounts.id.initialize({
-          client_id: GOOGLE_CLIENT_ID,
-          callback: function(resp) {
-            if (resp && resp.credential && supabaseClient) {
-              authClearError();
-              supabaseClient.auth.signInWithIdToken({
-                provider: 'google',
-                token: resp.credential
-              }).then(function(res){
-                if (res.error) {
-                  authShowError(res.error.message);
-                } else {
-                  if (authDialog && typeof authDialog.close === 'function') authDialog.close();
-                }
-              }).catch(function(err){
-                authShowError(err.message || 'Google sign-in failed');
-              });
-            }
-          },
-          auto_select: false,
-          cancel_on_tap_outside: true
-        });
-
-        if (gsiWrapper) {
-          window.google.accounts.id.renderButton(gsiWrapper, {
-            theme: 'outline',
-            size: 'large',
-            width: 340,
-            shape: 'pill',
-            text: 'continue_with',
-            logo_alignment: 'left'
-          });
-          if (googleAuthBtn) googleAuthBtn.style.display = 'none';
-        }
-        gsiReady = true;
-      } catch(e) {
-        console.warn('Google Identity error:', e);
-      }
-    }
-  }
-
-  if (window.google && window.google.accounts) {
-    renderGoogleButton();
-  } else {
-    window.addEventListener('load', function(){ setTimeout(renderGoogleButton, 300); });
-  }
-
-  if (googleAuthBtn) googleAuthBtn.addEventListener('click', function(){
-    authClearError();
-    if (!supabaseClient) { authShowError('Google sign-in isn’t connected on this preview yet.'); return; }
-    if (window.google && window.google.accounts && window.google.accounts.id) {
-      window.google.accounts.id.prompt();
-    } else {
-      supabaseClient.auth.signInWithOAuth({ provider: 'google', options: { redirectTo: window.location.origin } });
-    }
-  });
+  // All tools 100% free with no sign-in required
+  applyUnlockUI();
 
   ['image','pdf','video','security','utilities','effects'].forEach(function(cat){
     var panel = document.querySelector('.cat-panel[data-cat-panel="' + cat + '"]');
