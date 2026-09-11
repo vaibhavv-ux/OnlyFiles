@@ -247,6 +247,34 @@
   .icon-btn{width:36px;height:36px;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--text-dim);display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none;transition:border-color .15s ease, color .15s ease;}
   .icon-btn:hover{border-color:var(--text-faint);color:var(--text);}
 
+  @media (max-width: 480px) {
+    .nav-inner {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+    .navlinks {
+      gap: 6px;
+    }
+    .navlinks .btn-ghost {
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+    #navCta {
+      font-size: 0;      /* collapse the long label */
+      padding: 8px 12px;
+    }
+    #navCta::after {
+      content: "Unlock Pro";
+      font-size: 12px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .navlinks .btn-ghost {
+      display: none;    /* drop "Sign in" text on the very smallest phones */
+    }
+  }
+
   .btn{font-family:var(--font-body);font-weight:700;font-size:14.5px;border-radius:999px;border:1px solid transparent;padding:11px 20px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:transform .15s ease, box-shadow .15s ease, background .15s ease, opacity .15s ease;white-space:nowrap;}
   .btn:active{transform:translateY(1px);}
   .btn-primary{background:var(--accent);color:var(--accent-ink);}
