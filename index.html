@@ -75,11 +75,11 @@
   ],
   "offers": {
     "@type": "Offer",
-    "price": "4.99",
+    "price": "0.00",
     "priceCurrency": "USD",
     "availability": "https://schema.org/InStock",
     "url": "https://onlyfiles.in/#pricing",
-    "description": "One-time lifetime payment that unlocks all Pro tools. Six core tools are free forever with no account required."
+    "description": "All 19 tools are 100% free with no account or credit card required."
   }
 }
 </script>
@@ -264,7 +264,7 @@
       padding: 8px 12px;
     }
     #navCta::after {
-      content: "Unlock Pro";
+      content: "Explore Tools";
       font-size: 12px;
     }
   }
@@ -399,9 +399,9 @@
 
   /* ---------- Pro lock ---------- */
   .tool-panel-pro{position:relative;}
-  .pro-overlay{display:none;position:absolute;inset:0;z-index:5;border-radius:var(--radius-l);align-items:center;justify-content:center;flex-direction:column;text-align:center;gap:14px;padding:30px;background:color-mix(in srgb, var(--bg) 78%, transparent);backdrop-filter:blur(3px);}
-  .tool-panel-pro.locked .pro-overlay{display:flex;}
-  .tool-panel-pro.locked .pro-body{filter:blur(5px);pointer-events:none;user-select:none;}
+  .pro-overlay{display:none !important;}
+  .tool-panel-pro.locked .pro-overlay{display:none !important;}
+  .tool-panel-pro.locked .pro-body{filter:none !important;pointer-events:auto !important;user-select:auto !important;}
   .pro-overlay .lock-icon{width:46px;height:46px;border-radius:50%;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--gold);}
   .pro-overlay h4, .pro-overlay .pro-title{font-size:17px;font-family:var(--font-body);font-weight:800;}
   .pro-overlay p{font-size:13.5px;color:var(--text-dim);max-width:36ch;}
@@ -536,7 +536,7 @@
     <nav class="navlinks">
       <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle light and dark theme"></button>
       <button class="btn btn-ghost" id="authNavBtn" type="button" style="padding:8px 14px;font-size:13px;">Sign in</button>
-      <button class="btn btn-gold" id="navCta">Unlock Pro Studio</button>
+      <button class="btn btn-gold" id="navCta">Explore Tools</button>
     </nav>
   </div>
 </header>
@@ -550,7 +550,7 @@
       <h1>Shrink your files.<br><em>Not your privacy.</em></h1>
       <p class="lede">OnlyFiles helps you shrink, compress, convert, merge, encrypt, watermark and scrub your files entirely on your own device, protecting your privacy. No server round-trip, ever — which means no upload cap, no "processing" spinner while a stranger's server holds your photos, and nothing to leak in a breach that never happens.</p>
       <div class="hero-cta">
-        <button class="btn btn-gold" id="heroCta">Unlock Pro Studio — $4.99 once</button>
+        <button class="btn btn-gold" id="heroCta">Explore All 19 Tools — 100% Free</button>
         <a class="btn btn-ghost" href="#appShell" id="tryFreeLink">Try the free tools ↓</a>
       </div>
       <div class="trust-row">
@@ -564,7 +564,7 @@
         <div class="stat-card"><div class="num mono">19</div><div class="lbl">tools, one tab</div></div>
         <div class="stat-card"><div class="num mono">0</div><div class="lbl">bytes ever uploaded</div></div>
         <div class="stat-card"><div class="num mono" id="statProcessed">0</div><div class="lbl">files processed on this device</div></div>
-        <div class="stat-card"><div class="num mono">$4.99</div><div class="lbl">once — not monthly</div></div>
+        <div class="stat-card"><div class="num mono" style="color:var(--accent);">100%</div><div class="lbl">free, no paywalls</div></div>
       </div>
     </div>
   </section>
@@ -1163,35 +1163,23 @@
   <section id="pricing">
     <div class="wrap">
       <div class="section-head" style="text-align:center;max-width:none;">
-        <span class="eyebrow" style="margin-inline:auto;"><span class="dot"></span>Pricing</span>
-        <h2>One payment. That's it.</h2>
-        <p style="max-width:56ch;margin-inline:auto;">Six core tools are free forever. Pro unlocks all 13 Pro tools &mdash; batch processing, privacy scrubbing, encryption, PDF editing, format converters, blur &amp; redaction, upscaling and more &mdash; for a single payment, not a subscription.</p>
+        <span class="eyebrow" style="margin-inline:auto;"><span class="dot"></span>Access</span>
+        <h2>All 19 tools are 100% free.</h2>
+        <p style="max-width:56ch;margin-inline:auto;">No subscriptions, no accounts, no paywalls. Every tool runs directly on your device with zero upload limits.</p>
       </div>
-      <div class="pricing-wrap">
-        <div class="price-card">
-          <div class="price-top"><div><span class="eyebrow"><span class="dot"></span>Free forever</span><div class="price-amount">$0</div><div class="price-sub">No account, no card</div></div></div>
-          <ul class="price-list">
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5 10 17l9-10"/></svg>Image compress &amp; convert</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5 10 17l9-10"/></svg>PDF compress</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5 10 17l9-10"/></svg>Video compress</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5 10 17l9-10"/></svg>Decrypt files others send you</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5 10 17l9-10"/></svg>Photo filters &amp; effects</li>
+      <div class="pricing-wrap" style="max-width:680px;margin:0 auto;">
+        <div class="price-card featured" style="text-align:center;">
+          <div class="price-top" style="justify-content:center;"><div><span class="eyebrow gold"><span class="dot"></span>Full Access</span><div class="price-amount">$0</div><div class="price-sub">All 19 tools unlocked &middot; No credit card needed</div></div></div>
+          <ul class="price-list" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px 20px;text-align:left;margin-top:20px;">
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5 10 17l9-10"/></svg>All 19 tools completely unlocked</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5 10 17l9-10"/></svg>PDF compress, merge &amp; page editor</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5 10 17l9-10"/></svg>Batch image compress &amp; format converter</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5 10 17l9-10"/></svg>Video compress, trim &amp; frame grabber</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5 10 17l9-10"/></svg>AES-256 encryption &amp; privacy scrubber</li>
+            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5 10 17l9-10"/></svg>100% on-device &middot; Zero uploads</li>
           </ul>
-        </div>
-        <div class="price-card featured">
-          <div class="price-top"><div><span class="eyebrow gold"><span class="dot"></span>Lifetime Pro Studio</span><div class="price-amount">$4<sup>.99</sup></div><div class="price-sub">Paid once. Yours forever.</div></div></div>
-          <ul class="price-list">
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5 10 17l9-10"/></svg>All 13 Pro tools &mdash; batch processing, watermarking, encryption, upscaling &amp; more</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5 10 17l9-10"/></svg>PDF merge &amp; page toolkit</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5 10 17l9-10"/></svg>Video trim, frame grabber, audio extractor</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5 10 17l9-10"/></svg>AES-256 file encryption, QR studio, bulk renamer</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5 10 17l9-10"/></svg>Blur &amp; pixelate, image upscaler, and creative filters</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5 10 17l9-10"/></svg>No file-count or file-size caps, no ads, no watermark</li>
-            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5 10 17l9-10"/></svg>Free updates for the life of the product</li>
-          </ul>
-          <button class="btn btn-gold btn-block" id="pricingCta" style="margin-top:26px;">Unlock Pro Studio</button>
-          <p class="price-fine">Secure checkout &middot; one-time charge, not a subscription</p>
-          <p class="unlocked-banner" id="pricingUnlockedBanner">&#10003; Unlocked on this device</p>
+          <button class="btn btn-gold btn-block" id="pricingCta" style="margin-top:26px;">Start Using OnlyFiles</button>
+          <p class="price-fine">&#10003; 100% Free &middot; No subscriptions or card required</p>
         </div>
       </div>
     </div>
@@ -1207,12 +1195,12 @@
           <p>No. Every tool runs with your browser's own decoding, canvas, crypto and recording APIs. There's no server call in the processing path &mdash; you can disconnect your Wi-Fi after the page loads and every tool still works.</p>
         </details>
         <details class="faq-item">
-          <summary>What's actually included in the free version vs. Pro?<span class="chev">+</span></summary>
-          <p>Image compress &amp; convert, PDF compress, JPG to PDF, video compress, decrypting a file someone sends you, and photo filters &amp; effects are free forever, no account needed. The other 13 tools &mdash; batch processing, watermarking, the privacy scrubber, favicon kit, PDF merge and page editing, video trim & frame grabber, encryption, QR codes, the bulk renamer, blur &amp; pixelate, and the image upscaler &mdash; unlock with one $4.99 lifetime payment.</p>
+          <summary>Are all 19 tools really free?<span class="chev">+</span></summary>
+          <p>Yes. Every single tool &mdash; including batch processing, watermarking, the privacy scrubber, favicon generator, PDF merge and page editing, video trim &amp; frame grabber, AES-256 encryption, QR codes, bulk renamer, blur redaction, and the image upscaler &mdash; is currently 100% free with no paywalls or card required.</p>
         </details>
         <details class="faq-item">
-          <summary>Is $4.99 really one-time, not monthly?<span class="chev">+</span></summary>
-          <p>Yes. One charge, no recurring billing, no card kept on file for a renewal. If a separate paid tier is ever added later, anything you already unlocked stays unlocked.</p>
+          <summary>Do I need to pay or enter a credit card?<span class="chev">+</span></summary>
+          <p>No. You can use all 19 tools right now with no account, no payment, and no credit card required.</p>
         </details>
         <details class="faq-item">
           <summary>How does the metadata scrubber actually work?<span class="chev">+</span></summary>
@@ -1238,11 +1226,10 @@
   <section>
     <div class="wrap">
       <div class="final-cta" style="border-radius:var(--radius-l);background:linear-gradient(135deg, var(--surface), var(--surface-2));border:1px solid var(--border);padding:56px;text-align:center;">
-        <h2 style="font-size:clamp(24px,3.6vw,34px);">Stop emailing files to yourself.</h2>
-        <p style="margin-top:12px;color:var(--text-dim);">Thirteen more tools are one payment away — and the six you'll reach for daily are already free.</p>
+        <h2 style="font-size:clamp(24px,3.6vw,34px);">Every file tool you need, 100% free.</h2>
+        <p style="margin-top:12px;color:var(--text-dim);">All 19 tools are completely free to use directly in your browser with zero uploads and zero limits.</p>
         <div class="hero-cta" style="justify-content:center;">
-          <button class="btn btn-gold" id="finalCta">Unlock Pro Studio — $4.99</button>
-          <a class="btn btn-ghost" href="#appShell">Try the free tools</a>
+          <button class="btn btn-gold" id="finalCta">Start Using All 19 Tools</button>
         </div>
       </div>
     </div>
@@ -1480,8 +1467,7 @@
   var proStatus = false;
   var currentSignedInEmail = '';
   function isUnlocked(){
-    if (currentSignedInEmail && currentSignedInEmail.toLowerCase() === 'vmidha98@gmail.com') return true;
-    return !!proStatus;
+    return true; // All tools 100% free
   }
   function refreshProStatusFromServer(){
     if (!supabaseClient || !supabaseClient.auth) {
@@ -1530,7 +1516,7 @@
       var el = document.getElementById(id);
       if (!el) return;
       if (ctaOriginalText[id] === undefined) ctaOriginalText[id] = el.textContent;
-      el.textContent = unlocked ? '✓ Pro Studio Unlocked' : ctaOriginalText[id];
+      // All tools free
     });
     refreshProLocks();
   }
@@ -1547,9 +1533,14 @@
     if (modalUnlocked) modalUnlocked.classList.toggle('show', unlocked);
     if (dialog && typeof dialog.showModal === 'function') dialog.showModal();
   }
+  function scrollToTools(e){
+    if (e && e.preventDefault) e.preventDefault();
+    var target = document.getElementById('appShell');
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  }
   ['navCta','heroCta','pricingCta','finalCta'].forEach(function(id){
     var el = document.getElementById(id);
-    if (el) el.addEventListener('click', openCheckout);
+    if (el) el.addEventListener('click', scrollToTools);
   });
   var unlockCtas = document.querySelectorAll('.unlockCta');
   for (var uci = 0; uci < unlockCtas.length; uci++) unlockCtas[uci].addEventListener('click', openCheckout);

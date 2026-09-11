@@ -73,7 +73,7 @@ No file bytes are transmitted over HTTP/HTTPS during conversion or compression.
 ## 🌐 Links & Resources
 
 * **Website**: [https://onlyfiles.in](https://onlyfiles.in)
-* **Pricing**: Six core tools are free forever with no account required; 13 advanced tools unlock with a single lifetime pass of $4.99 ($2.49 with promo code `PRODHUNT`).
+* **Pricing**: 100% Free — All 19 tools are unlocked and free to use with zero account or card required.
 * **Terms & Conditions**: [https://onlyfiles.in/terms-and-conditions](https://onlyfiles.in/terms-and-conditions)
 * **Privacy Policy**: [https://onlyfiles.in/privacy-policy](https://onlyfiles.in/privacy-policy)
 * **Contact & Support**: [hello@onlyfiles.in](mailto:hello@onlyfiles.in)
