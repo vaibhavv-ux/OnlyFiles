@@ -377,7 +377,7 @@
   .subtab-btn{font-family:var(--font-mono);font-size:12.5px;padding:8px 14px;border-radius:8px;border:1px solid var(--border);background:var(--surface-2);color:var(--text-dim);cursor:pointer;transition:all .15s ease;display:inline-flex;align-items:center;gap:6px;}
   .subtab-btn:hover{color:var(--text);}
   .subtab-btn.active{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);}
-  .subtab-btn .lock-ic{opacity:.6;}
+  .subtab-btn .lock-ic, .lock-ic, .lock-icon{display:none !important;}
 
   .section-head{max-width:64ch;margin-bottom:36px;}
   .section-head .eyebrow{margin-bottom:16px;}
@@ -621,10 +621,10 @@
         <div class="section-head"><span class="eyebrow"><span class="dot"></span>Image tools</span><h2>Image Studio</h2><p>Compress, watermark, scrub and package images — every pixel processed by your own browser's canvas.</p></div>
         <div class="subtab-row" id="imageSubtabs">
           <button class="subtab-btn" data-sub-target="compress">Compress &amp; Convert</button>
-          <button class="subtab-btn" data-sub-target="batch">Batch Compress <span class="lock-ic">🔒</span></button>
-          <button class="subtab-btn" data-sub-target="watermark">Watermark <span class="lock-ic">🔒</span></button>
-          <button class="subtab-btn" data-sub-target="privacy">Privacy Scrubber <span class="lock-ic">🔒</span></button>
-          <button class="subtab-btn" data-sub-target="favicon">Favicon Kit <span class="lock-ic">🔒</span></button>
+          <button class="subtab-btn" data-sub-target="batch">Batch Compress</button>
+          <button class="subtab-btn" data-sub-target="watermark">Watermark</button>
+          <button class="subtab-btn" data-sub-target="privacy">Privacy Scrubber</button>
+          <button class="subtab-btn" data-sub-target="favicon">Favicon Kit</button>
         </div>
 
         <!-- Compress & Convert (FREE) -->
@@ -775,8 +775,8 @@
         <div class="section-head"><span class="eyebrow"><span class="dot"></span>PDF tools</span><h2>PDF Studio</h2><p>Compress, merge and edit PDFs without a single byte touching a server.</p></div>
         <div class="subtab-row" id="pdfSubtabs">
           <button class="subtab-btn" data-sub-target="compress">Compress</button>
-          <button class="subtab-btn" data-sub-target="merge">Merge <span class="lock-ic">🔒</span></button>
-          <button class="subtab-btn" data-sub-target="pages">Page Toolkit <span class="lock-ic">🔒</span></button>
+          <button class="subtab-btn" data-sub-target="merge">Merge</button>
+          <button class="subtab-btn" data-sub-target="pages">Page Toolkit</button>
           <button class="subtab-btn" data-sub-target="jpgtopdf">JPG to PDF</button>
         </div>
 
@@ -868,8 +868,8 @@
         <div class="section-head"><span class="eyebrow"><span class="dot"></span>Video &amp; audio tools</span><h2>Video &amp; Audio</h2><p>Compress, trim, grab frames and pull audio &mdash; all re-encoded live in your browser.</p></div>
         <div class="subtab-row" id="videoSubtabs">
           <button class="subtab-btn" data-sub-target="compress">Compress</button>
-          <button class="subtab-btn" data-sub-target="trim">Trim <span class="lock-ic">🔒</span></button>
-          <button class="subtab-btn" data-sub-target="frames">Frame Grabber <span class="lock-ic">🔒</span></button>
+          <button class="subtab-btn" data-sub-target="trim">Trim</button>
+          <button class="subtab-btn" data-sub-target="frames">Frame Grabber</button>
         </div>
 
         <!-- Video Compress (FREE) -->
@@ -953,7 +953,7 @@
       <div class="cat-panel" data-cat-panel="security" hidden>
         <div class="section-head"><span class="eyebrow"><span class="dot"></span>Privacy &amp; security</span><h2>Security Vault</h2><p>Real AES-256 encryption, generated and decrypted entirely in your browser. OnlyFiles never sees your password or your file.</p></div>
         <div class="subtab-row" id="securitySubtabs">
-          <button class="subtab-btn" data-sub-target="encrypt">Encrypt a file <span class="lock-ic">🔒</span></button>
+          <button class="subtab-btn" data-sub-target="encrypt">Encrypt a file</button>
           <button class="subtab-btn" data-sub-target="decrypt">Decrypt a file</button>
         </div>
 
@@ -1002,8 +1002,8 @@
       <div class="cat-panel" data-cat-panel="utilities" hidden>
         <div class="section-head"><span class="eyebrow"><span class="dot"></span>Utilities</span><h2>Utilities</h2><p>The small tools that don't deserve their own five ad-covered websites.</p></div>
         <div class="subtab-row" id="utilSubtabs">
-          <button class="subtab-btn" data-sub-target="qr">QR Code Studio <span class="lock-ic">🔒</span></button>
-          <button class="subtab-btn" data-sub-target="rename">Bulk Renamer <span class="lock-ic">🔒</span></button>
+          <button class="subtab-btn" data-sub-target="qr">QR Code Studio</button>
+          <button class="subtab-btn" data-sub-target="rename">Bulk Renamer</button>
         </div>
 
         <!-- QR Studio (PRO) -->
@@ -1064,8 +1064,8 @@
         <div class="section-head"><span class="eyebrow"><span class="dot"></span>Photo effects</span><h2>Photo Effects</h2><p>Color filters, creative effects, blur/redaction, and image upscaling &mdash; all rendered by your own browser, nothing sent anywhere.</p></div>
         <div class="subtab-row" id="effectsSubtabs">
           <button class="subtab-btn active" data-sub-target="filters">Filters &amp; Effects</button>
-          <button class="subtab-btn" data-sub-target="blur">Blur &amp; Pixelate <span class="lock-ic">🔒</span></button>
-          <button class="subtab-btn" data-sub-target="upscale">Enhance &amp; Upscale <span class="lock-ic">🔒</span></button>
+          <button class="subtab-btn" data-sub-target="blur">Blur &amp; Pixelate</button>
+          <button class="subtab-btn" data-sub-target="upscale">Enhance &amp; Upscale</button>
         </div>
 
         <!-- Filters & Effects (FREE) -->
