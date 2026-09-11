@@ -98,18 +98,10 @@
     },
     {
       "@type": "Question",
-      "name": "What's actually included in the free version vs. Pro?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "All 19 tools are 100% free to use with zero limits. You can compress, convert, merge, encrypt, watermark, redact, and edit PDFs, images, and videos directly in your browser with zero paywalls and no account needed."
-      }
-    },
-    {
-      "@type": "Question",
       "name": "Are all 19 tools completely free to use?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes! Every single tool on OnlyFiles is 100% free. No account, no payment, and no credit card required."
+        "text": "Yes! All 19 tools on OnlyFiles are 100% free to use with zero limits. You can compress, convert, merge, encrypt, watermark, redact, and edit PDFs, images, and videos directly in your browser with zero paywalls, subscriptions, or accounts needed."
       }
     },
     {
@@ -130,10 +122,10 @@
     },
     {
       "@type": "Question",
-      "name": "Do I need to create an account?",
+      "name": "Do I need to create an account or subscribe?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No login is required for any tool. After purchase, this browser remembers that you've unlocked Pro so you can come back anytime. A full cross-device account system (with sign-in) is planned for a future update."
+        "text": "No. You do not need to create an account, log in, or pay for a subscription. Every single tool on OnlyFiles is 100% free and runs directly in your browser without any registration."
       }
     },
     {
@@ -1211,8 +1203,8 @@
           <p>The Security Vault uses AES-256-GCM with a key derived from your password via PBKDF2 (250,000 iterations, SHA-256) &mdash; all through your browser's native Web Crypto API, the same primitives used by password managers. Your password and the original file never leave your device, and OnlyFiles has no way to recover a lost password.</p>
         </details>
         <details class="faq-item">
-          <summary>Do I need to create an account?<span class="chev">+</span></summary>
-          <p>No login is required for any tool. After purchase, this browser remembers that you've unlocked Pro so you can come back anytime. A full cross-device account system (with sign-in) is planned for a future update.</p>
+          <summary>Do I need to create an account or subscribe?<span class="chev">+</span></summary>
+          <p>No. You do not need to create an account, log in, or pay for a subscription. Every single tool on OnlyFiles is 100% free and runs directly in your browser without any registration.</p>
         </details>
         <details class="faq-item">
           <summary>Does it work on my phone?<span class="chev">+</span></summary>
@@ -1258,40 +1250,6 @@
     </div>
   </div>
 </footer>
-
-<!-- CHECKOUT MODAL -->
-<dialog id="checkout">
-  <div class="modal-body">
-    <div class="modal-head"><h3>Checkout</h3><button class="modal-close" id="modalClose" aria-label="Close checkout">&times;</button></div>
-    <div id="modalForm">
-      <div class="order-row"><span>OnlyFiles Pro &mdash; Lifetime Access</span><span class="mono">$4.99</span></div>
-      <div class="order-row total"><span>Total due today</span><span class="mono">$4.99</span></div>
-      <div class="field"><label for="emailField">Email</label><input type="email" id="emailField" placeholder="you@example.com" autocomplete="email"></div>
-      <div class="field" style="margin-top:12px;">
-        <label for="promoField">Promo code</label>
-        <div style="display:flex;gap:8px;">
-          <input type="text" id="promoField" placeholder="e.g. PRODHUNT" style="text-transform:uppercase;font-family:var(--font-mono);font-size:13px;" autocomplete="off">
-          <button type="button" class="btn btn-ghost" id="applyPromoBtn" style="padding:0 16px;font-size:13px;flex:none;">Apply</button>
-        </div>
-        <div id="promoMsg" style="display:none;font-size:12px;margin-top:6px;font-family:var(--font-mono);"></div>
-      </div>
-      <button class="btn btn-gold btn-block" id="payBtn" style="margin-top:18px;">Pay $4.99</button>
-      <p class="modal-note">By purchasing, you agree to our <a href="/terms-and-conditions" target="_blank" rel="noopener" style="color:var(--accent-strong);text-decoration:underline;">Terms &amp; Conditions</a> and <a href="/privacy-policy" target="_blank" rel="noopener" style="color:var(--accent-strong);text-decoration:underline;">Privacy Policy</a>. All sales are final.</p>
-      <p class="modal-note" style="display:flex;align-items:center;justify-content:center;gap:6px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Secure checkout powered by Dodo Payments.</p>
-    </div>
-    <div class="modal-success" id="modalSuccess">
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 2.5 2.5L16 9.5"/></svg>
-      <h4>Payments launch soon</h4>
-      <p>Live checkout isn't wired up yet, so nothing was charged. This browser has been marked as unlocked so you can preview every Pro tool. Want an email the moment real checkout goes live?</p>
-      <button class="btn btn-ghost btn-block" id="notifyBtn" style="margin-top:14px;">Email me at launch</button>
-    </div>
-    <div class="modal-unlocked" id="modalUnlocked">
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="m8 12.5 2.5 2.5L16 9.5"/></svg>
-      <h4>Already unlocked on this device</h4>
-      <p>This browser already has lifetime Pro access from the checkout preview. Real payment processing will replace this once it's connected.</p>
-    </div>
-  </div>
-</dialog>
 
 <!-- AUTH MODAL -->
 <dialog id="authModal">
@@ -1524,15 +1482,6 @@
   var dialog = document.getElementById('checkout');
   var modalForm = document.getElementById('modalForm');
   var modalSuccess = document.getElementById('modalSuccess');
-  var modalUnlocked = document.getElementById('modalUnlocked');
-
-  function openCheckout(){
-    var unlocked = isUnlocked();
-    if (modalForm) modalForm.style.display = unlocked ? 'none' : '';
-    if (modalSuccess) modalSuccess.classList.remove('show');
-    if (modalUnlocked) modalUnlocked.classList.toggle('show', unlocked);
-    if (dialog && typeof dialog.showModal === 'function') dialog.showModal();
-  }
   function scrollToTools(e){
     if (e && e.preventDefault) e.preventDefault();
     var target = document.getElementById('appShell');
@@ -1543,140 +1492,7 @@
     if (el) el.addEventListener('click', scrollToTools);
   });
   var unlockCtas = document.querySelectorAll('.unlockCta');
-  for (var uci = 0; uci < unlockCtas.length; uci++) unlockCtas[uci].addEventListener('click', openCheckout);
-
-  var modalCloseBtn = document.getElementById('modalClose');
-  if (modalCloseBtn) modalCloseBtn.addEventListener('click', function(){ dialog.close(); });
-  if (dialog) dialog.addEventListener('click', function(e){ if (e.target === dialog) dialog.close(); });
-
-  var appliedPromoCode = '';
-  var promoField = document.getElementById('promoField');
-  var applyPromoBtn = document.getElementById('applyPromoBtn');
-  var promoMsg = document.getElementById('promoMsg');
-  var totalRow = document.querySelector('.order-row.total');
-
-  function applyPromo(code, silent) {
-    var c = (code || '').trim().toUpperCase();
-    if (!c) {
-      appliedPromoCode = '';
-      if (promoMsg) promoMsg.style.display = 'none';
-      if (totalRow) totalRow.innerHTML = '<span>Total due today</span><span class="mono">$4.99</span>';
-      if (payBtn) payBtn.textContent = 'Pay $4.99';
-      return;
-    }
-    appliedPromoCode = c;
-    if (c === 'PRODHUNT') {
-      if (totalRow) totalRow.innerHTML = '<span>Total due today (50% off)</span><span class="mono"><del style="color:var(--text-faint);margin-right:6px;">$4.99</del>$2.49</span>';
-      if (payBtn) payBtn.textContent = 'Pay $2.49';
-      if (promoMsg) {
-        promoMsg.style.display = 'block';
-        promoMsg.style.color = 'var(--accent)';
-        promoMsg.textContent = '✓ PRODHUNT applied: 50% discount ($2.49)';
-      }
-      if (!silent) toast('✓ 50% discount applied with PRODHUNT!');
-    } else {
-      if (promoMsg) {
-        promoMsg.style.display = 'block';
-        promoMsg.style.color = 'var(--text-dim)';
-        promoMsg.textContent = 'Code ' + c + ' will be applied at checkout';
-      }
-    }
-  }
-
-  if (applyPromoBtn && promoField) {
-    applyPromoBtn.addEventListener('click', function(){ applyPromo(promoField.value); });
-    promoField.addEventListener('keydown', function(e){ if (e.key === 'Enter') { e.preventDefault(); applyPromo(promoField.value); } });
-  }
-
-  // Auto-detect ?promo=PRODHUNT or ?ref=producthunt
-  try {
-    var up = new URLSearchParams(window.location.search);
-    var pCode = up.get('promo') || up.get('coupon') || (up.get('ref') === 'producthunt' ? 'PRODHUNT' : '');
-    if (pCode && pCode.toUpperCase() === 'PRODHUNT') {
-      if (promoField) promoField.value = 'PRODHUNT';
-      applyPromo('PRODHUNT', true);
-      var prAmt = document.querySelector('.price-amount');
-      if (prAmt) prAmt.innerHTML = '<del style="font-size:24px;color:var(--text-faint);margin-right:8px;">$4.99</del><sup>$</sup>2.49';
-      var hCta = document.getElementById('heroCta');
-      if (hCta) hCta.textContent = 'Unlock Pro Studio — $2.49 (50% OFF)';
-      var fCta = document.getElementById('finalCta');
-      if (fCta) fCta.textContent = 'Unlock Pro Studio — $2.49 (50% OFF)';
-      var nCta = document.getElementById('navCta');
-      if (nCta) nCta.textContent = 'Pro — $2.49';
-    }
-  } catch(e){}
-
-  var payBtn = document.getElementById('payBtn');
-  if (payBtn) payBtn.addEventListener('click', function(){
-    if (!supabaseClient || !supabaseClient.auth) {
-      toast('Sign-in isn’t connected on this preview yet.');
-      return;
-    }
-    supabaseClient.auth.getSession().then(function(res){
-      var session = res && res.data ? res.data.session : null;
-      if (!session) {
-        dialog.close();
-        toast('Sign in first, then come back to unlock Pro.');
-        openAuthModal();
-        return;
-      }
-      payBtn.disabled = true;
-      var origPayText = payBtn.textContent;
-      payBtn.textContent = 'Redirecting to checkout…';
-      fetch('/api/create-checkout', {
-        method: 'POST',
-        headers: {
-          'Authorization': 'Bearer ' + session.access_token,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          discount_code: appliedPromoCode || (promoField ? promoField.value.trim() : '')
-        })
-      }).then(function(r){ return r.json().then(function(body){ return { ok: r.ok, body: body }; }); })
-        .then(function(res){
-          if (!res.ok || !res.body || !res.body.checkout_url) {
-            payBtn.disabled = false;
-            payBtn.textContent = origPayText;
-            toast((res.body && res.body.error) || 'Checkout isn’t available yet — try again shortly.');
-            return;
-          }
-          window.location.href = res.body.checkout_url;
-        })
-        .catch(function(){
-          payBtn.disabled = false;
-          payBtn.textContent = origPayText;
-          toast('Could not reach checkout — check your connection and try again.');
-        });
-    });
-  });
-  var notifyBtn = document.getElementById('notifyBtn');
-  if (notifyBtn) notifyBtn.addEventListener('click', function(){
-    var emailField = document.getElementById('emailField');
-    var email = emailField ? emailField.value.trim() : '';
-    var subject = encodeURIComponent('Notify me when OnlyFiles launches');
-    var body = encodeURIComponent(email ? ('Please email me at ' + email + ' when checkout is live.') : 'Please notify me when checkout is live.');
-    window.location.href = 'mailto:hello@onlyfiles.in?subject=' + subject + '&body=' + body;
-  });
-
-  // If we just landed back from a successful Dodo checkout, the webhook may
-  // take a second or two to land — poll the real status a few times rather
-  // than trusting the redirect itself (a redirect URL is not proof of payment).
-  (function handleCheckoutReturn(){
-    var params = new URLSearchParams(window.location.search);
-    if (params.get('checkout') !== 'success') return;
-    var cleanUrl = window.location.pathname + window.location.hash;
-    window.history.replaceState({}, '', cleanUrl);
-    toast('Payment received — activating Pro…');
-    var attempts = 0;
-    (function poll(){
-      attempts++;
-      refreshProStatusFromServer().then(function(unlocked){
-        if (unlocked) { toast('Pro unlocked — enjoy!'); return; }
-        if (attempts < 6) setTimeout(poll, 1500);
-        else toast('Payment received. If Pro tools stay locked, refresh in a minute.');
-      });
-    })();
-  })();
+  for (var uci = 0; uci < unlockCtas.length; uci++) unlockCtas[uci].addEventListener('click', scrollToTools);
 
   // ================= Tab system =================
   function initTabGroup(buttons, panels, btnKeyAttr, panelKeyAttr){
