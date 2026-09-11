@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>if(location.hostname==='www.onlyfiles.in'){location.replace('https://onlyfiles.in'+location.pathname+location.search+location.hash);}</script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Video Frame Grabber Online — Extract Still Images | OnlyFiles</title>
+<meta name="description" content="Capture high-resolution still image frames from MP4, MOV, and WebM videos directly in your browser. 100% private, client-side video snapshot tool.">
+<meta name="keywords" content="video frame grabber, extract frames from video, capture photo from video, video snapshot online, save video frame as png, video to image sequence">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="google-site-verification" content="jA_JFMftxdYdO71esTAN_A7B456b41wsKPniopYNgDY">
+<link rel="canonical" href="https://onlyfiles.in/video-frame-grabber">
+
+<!-- Favicons & Touch Icons -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="512x512" href="/logo-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/logo-512.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OnlyFiles">
+<meta property="og:title" content="Video Frame Grabber Online — 100% Private | OnlyFiles">
+<meta property="og:description" content="Extract crisp, full-resolution still photos from any video directly in your browser with zero uploads.">
+<meta property="og:url" content="https://onlyfiles.in/video-frame-grabber">
+<meta property="og:image" content="https://onlyfiles.in/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Video Frame Grabber Online — 100% Private | OnlyFiles">
+<meta name="twitter:description" content="Extract crisp, full-resolution still photos from any video directly in your browser with zero uploads.">
+<meta name="twitter:image" content="https://onlyfiles.in/og-image.png">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://onlyfiles.in/" },
+    { "@type": "ListItem", "position": 2, "name": "Frame Grabber", "item": "https://onlyfiles.in/video-frame-grabber" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "OnlyFiles Video Frame Grabber",
+  "url": "https://onlyfiles.in/video-frame-grabber",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any modern web browser",
+  "description": "Client-side video frame extractor. Grab single high-resolution still images or timed sequences from video files using HTML5 Canvas without remote server uploads.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Are extracted frames saved at the full video resolution?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. OnlyFiles queries the native videoWidth and videoHeight of the media file, generating pixel-perfect 1080p, 2K, or 4K snapshots matching the source material."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I grab a sequence of frames automatically?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can specify a time interval in seconds and capture up to 40 sequential frames across the clip automatically."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+  :root{
+    --bg:#0c1512;
+    --surface:#121e19;
+    --surface-2:#182a22;
+    --surface-3:#1e352b;
+    --border:#25392f;
+    --text:#eef4f0;
+    --text-dim:#9db3a7;
+    --text-faint:#6d8579;
+    --accent:#5eead4;
+    --accent-strong:#2dd4bf;
+    --accent-ink:#04201b;
+    --gold:#f2c879;
+    --gold-ink:#2b1d02;
+    --font-display:'Fraunces', ui-serif, Georgia, serif;
+    --font-body:'Manrope', ui-sans-serif, system-ui, sans-serif;
+    --font-mono:'JetBrains Mono', ui-monospace, monospace;
+    --radius-m:12px;
+    --radius-l:18px;
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --bg:#f3f7f4; --surface:#ffffff; --surface-2:#eaf1ec; --surface-3:#dfe9e2; --border:#d7e3dc;
+      --text:#0f1f19; --text-dim:#4c6156; --text-faint:#7c9188;
+      --accent:#0d9488; --accent-strong:#0f766e; --accent-ink:#f3fffb;
+      --gold:#b5791a; --gold-ink:#fffaf0;
+    }
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{background:var(--bg);color:var(--text);font:15px/1.6 var(--font-body);-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px;}
+  a{color:var(--accent-strong);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  header.nav{border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;backdrop-filter:blur(8px);}
+  .nav-inner{max-width:1120px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  .brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:600;font-size:18px;color:var(--text);text-decoration:none;}
+  .navlinks{display:flex;align-items:center;gap:18px;}
+  .navlinks a{font-size:13.5px;font-weight:600;color:var(--text-dim);}
+  .navlinks a:hover{color:var(--text);text-decoration:none;}
+
+  .btn{font-family:var(--font-body);font-weight:700;font-size:14px;border-radius:999px;border:1px solid transparent;padding:10px 18px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .15s ease;text-decoration:none;white-space:nowrap;}
+  .btn:active{transform:translateY(1px);}
+  .btn-gold{background:var(--gold);color:var(--gold-ink);}
+  .btn-gold:hover{box-shadow:0 6px 20px -6px color-mix(in srgb, var(--gold) 65%, transparent);text-decoration:none;}
+  .btn-primary{background:var(--accent);color:var(--accent-ink);}
+  .btn-primary:hover{background:var(--accent-strong);text-decoration:none;}
+  .btn-primary:disabled{opacity:0.4;cursor:not-allowed;}
+  .btn-ghost{background:transparent;border-color:var(--border);color:var(--text);}
+  .btn-ghost:hover{background:var(--surface-2);}
+  .btn-sm{padding:6px 12px;font-size:12px;}
+  .btn-block{width:100%;justify-content:center;}
+
+  .breadcrumbs{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-faint);margin:24px 0 16px;font-family:var(--font-mono);}
+  .breadcrumbs a{color:var(--text-dim);}
+  .breadcrumbs .sep{opacity:.5;}
+  .breadcrumbs .current{color:var(--text);font-weight:600;}
+
+  .hero{padding:20px 0 40px;text-align:center;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dim);background:var(--surface-2);border:1px solid var(--border);padding:5px 12px;border-radius:999px;margin-bottom:16px;}
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);}
+  h1{font-family:var(--font-display);font-size:clamp(30px,4.5vw,46px);font-weight:600;margin:0 0 16px;line-height:1.15;}
+  h1 em{font-style:italic;color:var(--accent);}
+  .lede{font-size:17px;color:var(--text-dim);max-width:680px;margin:0 auto 32px;}
+
+  /* Tool Interface Card */
+  .tool-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-l);padding:28px;max-width:640px;margin:0 auto 60px;box-shadow:0 12px 36px -12px rgba(0,0,0,0.3);}
+  .dropzone{border:2px dashed var(--border);border-radius:var(--radius-m);padding:36px 20px;text-align:center;cursor:pointer;transition:border-color .15s ease, background .15s ease;}
+  .dropzone:hover,.dropzone.dragover{border-color:var(--accent);background:var(--surface-2);}
+  .dropzone svg{color:var(--accent);margin-bottom:12px;}
+  .dz-title{font-weight:700;font-size:16px;margin-bottom:4px;}
+  .dz-sub{font-size:13px;color:var(--text-faint);}
+  .dz-file-input{display:none;}
+
+  video{width:100%;border-radius:12px;margin-top:14px;background:#000;max-height:300px;}
+
+  .field-row{display:flex;gap:12px;margin-top:14px;flex-wrap:wrap;align-items:flex-end;}
+  .field-row > div{flex:1;min-width:140px;}
+  .tiny-label{display:block;font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--text-faint);margin-bottom:6px;font-weight:600;}
+  .text-input{width:100%;background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:9px 12px;color:var(--text);font:inherit;font-size:13.5px;}
+
+  .result-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin-top:20px;}
+  .result-card{background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:10px;text-align:center;display:flex;flex-direction:column;gap:6px;}
+  .result-thumb{width:100%;height:80px;object-fit:cover;border-radius:6px;}
+  .rc-name{font-weight:700;font-size:12px;font-family:var(--font-mono);}
+
+  .demo-note{font-size:13px;color:var(--text-faint);text-align:center;margin-top:12px;}
+
+  /* Content Sections */
+  .content-section{padding:40px 0;border-top:1px solid var(--border);}
+  .content-section h2{font-family:var(--font-display);font-size:26px;margin:0 0 16px;}
+  .content-section p{color:var(--text-dim);font-size:15px;line-height:1.7;}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:28px 0;}
+  @media(max-width:700px){.grid-2{grid-template-columns:1fr;}}
+  .feature-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-m);padding:20px;}
+  .feature-box h4{margin:0 0 8px;font-size:16px;color:var(--text);}
+  .feature-box p{margin:0;font-size:14px;color:var(--text-faint);}
+
+  /* FAQ Accordion */
+  .faq-item{border-bottom:1px solid var(--border);padding:18px 0;}
+  .faq-item:first-of-type{border-top:1px solid var(--border);}
+  .faq-q{font-weight:700;font-size:16px;color:var(--text);cursor:pointer;}
+  .faq-a{margin-top:10px;color:var(--text-dim);font-size:14.5px;line-height:1.6;}
+
+  footer{border-top:1px solid var(--border);padding:40px 0;margin-top:40px;}
+  .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;}
+  .footer-links{display:flex;gap:16px;font-size:13px;flex-wrap:wrap;}
+  .footer-links a{color:var(--text-dim);}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+      OnlyFiles
+    </a>
+    <div class="navlinks">
+      <a href="/#appShell">All Tools</a>
+      <a href="/trim-video">Trim Video</a>
+      <a href="/compress-video">Compress Video</a>
+      <a href="/#appShell" class="btn btn-gold" style="padding:8px 16px;font-size:13px;">Explore All Tools</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="breadcrumbs">
+    <a href="/">Home</a>
+    <span class="sep">/</span>
+    <span class="current">Frame Grabber</span>
+  </div>
+
+  <section class="hero">
+    <div class="eyebrow"><span class="dot"></span>100% In-Browser &middot; Zero Uploads</div>
+    <h1>Capture Video Still Frames <em>Privately</em></h1>
+    <p class="lede">Extract lossless, full-resolution PNG photos from any video in your browser. Pause at the exact moment or grab automatic sequential frames.</p>
+  </section>
+
+  <!-- Interactive Tool -->
+  <div class="tool-card">
+    <div class="dropzone" id="frameDropzone" tabindex="0" role="button" aria-label="Drop a video here to grab frames">
+      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+        <circle cx="12" cy="13" r="4"/>
+      </svg>
+      <div class="dz-title">Drop your video here</div>
+      <div class="dz-sub">MP4, MOV, or WebM &middot; processed locally</div>
+      <input type="file" id="frameInput" class="dz-file-input" accept="video/*">
+    </div>
+
+    <video id="frameVideoEl" muted playsinline controls style="display:none;"></video>
+
+    <div style="margin-top:16px;">
+      <button class="btn btn-primary btn-block" id="grabCurrentBtn" disabled>Capture Current Frame</button>
+    </div>
+
+    <div class="field-row">
+      <div>
+        <label class="tiny-label">Interval (Seconds)</label>
+        <input class="text-input" type="number" id="frameInterval" value="2" min="0.2" step="0.1">
+      </div>
+      <div>
+        <button class="btn btn-ghost btn-block" id="grabSequenceBtn" disabled>Grab Sequence (up to 40)</button>
+      </div>
+    </div>
+
+    <div class="result-grid" id="frameResults"></div>
+    <p class="demo-note" id="frameNote">Play or scrub to the desired moment, then click capture.</p>
+  </div>
+
+  <!-- Content Section -->
+  <section class="content-section">
+    <h2>Why Capture Video Frames with OnlyFiles?</h2>
+    <p>Taking a screenshot of a paused video on your computer often produces blurry results cluttered with video player interface buttons, pause icons, and lowered display resolution. Standard screenshot hotkeys cannot capture the raw uncompressed video buffer.</p>
+    <p>OnlyFiles reads the underlying video decoding canvas directly. When you click capture, your browser generates a pristine PNG photograph rendered at the full native dimensions of the video stream (such as 1920x1080 or 3840x2160) without any UI artifacts.</p>
+
+    <div class="grid-2">
+      <div class="feature-box">
+        <h4>Native Sensor Resolution</h4>
+        <p>Captures the true pixel dimensions of the video frame, completely free of browser playback controls or pause icons.</p>
+      </div>
+      <div class="feature-box">
+        <h4>High-Quality PNG Output</h4>
+        <p>Saves extracted snapshots as lossless PNG files, preventing secondary compression artifacts or color banding.</p>
+      </div>
+      <div class="feature-box">
+        <h4>Automated Sequence Mode</h4>
+        <p>Set a custom interval to sample still frames across an entire sequence for motion studies, thumbnails, or storyboards.</p>
+      </div>
+      <div class="feature-box">
+        <h4>Confidential &amp; Local</h4>
+        <p>Zero network round-trips. Your private footage is processed locally inside your web browser's memory.</p>
+      </div>
+    </div>
+
+    <!-- FAQs -->
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">Can I capture 4K video frames?</div>
+      <div class="faq-a">Yes. If your source video is 3840x2160 (4K UHD), OnlyFiles extracts still frames at the full 4K resolution regardless of your monitor's display scaling.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is there any limit to how many frames I can capture?</div>
+      <div class="faq-a">No. You can capture as many individual snapshots as you like and download each directly to your computer.</div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <p>&copy; 2026 OnlyFiles &middot; Private, on-device file tools.</p>
+    <div class="footer-links">
+      <a href="/#appShell">All Tools</a>
+      <a href="/compress-pdf">Compress PDF</a>
+      <a href="/merge-pdf">Merge PDF</a>
+      <a href="/compress-image">Compress Image</a>
+      <a href="/video-frame-grabber">Frame Grabber</a>
+      <a href="/trim-video">Trim Video</a>
+      <a href="/compress-video">Compress Video</a>
+      <a href="/security-vault">Security Vault</a>
+      <a href="/about">About</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+      <a href="mailto:hello@onlyfiles.in">hello@onlyfiles.in</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var frameDropzone = document.getElementById('frameDropzone');
+  var frameInput = document.getElementById('frameInput');
+  var frameVideoEl = document.getElementById('frameVideoEl');
+  var grabCurrentBtn = document.getElementById('grabCurrentBtn');
+  var frameInterval = document.getElementById('frameInterval');
+  var grabSequenceBtn = document.getElementById('grabSequenceBtn');
+  var frameNote = document.getElementById('frameNote');
+  var frameResults = document.getElementById('frameResults');
+  var fcanvas = document.createElement('canvas');
+  var fctx = fcanvas.getContext('2d');
+  var frameFile = null, frameBaseName = 'video';
+
+  frameDropzone.addEventListener('click', function(){ frameInput.click(); });
+  frameDropzone.addEventListener('dragover', function(e){ e.preventDefault(); frameDropzone.classList.add('dragover'); });
+  frameDropzone.addEventListener('dragleave', function(){ frameDropzone.classList.remove('dragover'); });
+  frameDropzone.addEventListener('drop', function(e){
+    e.preventDefault(); frameDropzone.classList.remove('dragover');
+    if (e.dataTransfer && e.dataTransfer.files) loadVideo(e.dataTransfer.files[0]);
+  });
+  frameInput.addEventListener('change', function(){
+    if (frameInput.files && frameInput.files[0]) loadVideo(frameInput.files[0]);
+  });
+
+  function loadVideo(file){
+    if (!file || file.type.indexOf('video/') !== 0) { frameNote.textContent = 'Please select a valid video file.'; return; }
+    frameFile = file;
+    frameBaseName = file.name.replace(/\.[^.]+$/, '') || 'video';
+    frameVideoEl.style.display = 'block';
+    frameVideoEl.src = URL.createObjectURL(file);
+    frameVideoEl.onloadedmetadata = function(){
+      grabCurrentBtn.disabled = false;
+      grabSequenceBtn.disabled = false;
+      frameNote.textContent = 'Play or scrub to any point in the video, then capture.';
+    };
+  }
+
+  function addFrameResult(blob, label){
+    var card = document.createElement('div'); card.className = 'result-card';
+    var im = document.createElement('img'); im.className = 'result-thumb'; im.src = URL.createObjectURL(blob);
+    var name = document.createElement('div'); name.className = 'rc-name'; name.textContent = label;
+    var btn = document.createElement('button'); btn.className = 'btn btn-primary btn-sm btn-block'; btn.textContent = 'Download';
+    btn.addEventListener('click', function(){
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a'); a.href = url;
+      a.download = frameBaseName + '-' + label.replace(/[^a-z0-9.]+/gi, '-') + '.png';
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    });
+    card.appendChild(im); card.appendChild(name); card.appendChild(btn);
+    frameResults.appendChild(card);
+  }
+
+  grabCurrentBtn.addEventListener('click', function(){
+    fcanvas.width = frameVideoEl.videoWidth;
+    fcanvas.height = frameVideoEl.videoHeight;
+    fctx.drawImage(frameVideoEl, 0, 0);
+    fcanvas.toBlob(function(blob){
+      addFrameResult(blob, frameVideoEl.currentTime.toFixed(1) + 's');
+    }, 'image/png');
+  });
+
+  grabSequenceBtn.addEventListener('click', function(){
+    var interval = parseFloat(frameInterval.value) || 2;
+    var duration = frameVideoEl.duration;
+    if (!duration || duration <= 0) return;
+    grabSequenceBtn.disabled = true;
+    frameNote.textContent = 'Extracting sequence…';
+
+    var times = [];
+    for (var t = 0; t < duration && times.length < 40; t += interval) {
+      times.push(t);
+    }
+
+    var idx = 0;
+    function next(){
+      if (idx >= times.length) {
+        grabSequenceBtn.disabled = false;
+        frameNote.textContent = 'Extracted ' + times.length + ' frames.';
+        return;
+      }
+      var targetTime = times[idx];
+      function onSeeked(){
+        frameVideoEl.removeEventListener('seeked', onSeeked);
+        fcanvas.width = frameVideoEl.videoWidth;
+        fcanvas.height = frameVideoEl.videoHeight;
+        fctx.drawImage(frameVideoEl, 0, 0);
+        fcanvas.toBlob(function(blob){
+          addFrameResult(blob, targetTime.toFixed(1) + 's');
+          idx++;
+          next();
+        }, 'image/png');
+      }
+      frameVideoEl.addEventListener('seeked', onSeeked);
+      frameVideoEl.currentTime = targetTime;
+    }
+    next();
+  });
+})();
+</script>
+</body>
+</html>

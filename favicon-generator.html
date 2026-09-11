@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>if(location.hostname==='www.onlyfiles.in'){location.replace('https://onlyfiles.in'+location.pathname+location.search+location.hash);}</script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Favicon Generator &amp; App Icon Kit — 100% Private &amp; Free | OnlyFiles</title>
+<meta name="description" content="Generate high-resolution PNG favicons, apple-touch-icons, and manifest.json code from any image directly in your browser. 100% private, on-device favicon kit.">
+<meta name="keywords" content="favicon generator, app icon generator, apple touch icon generator, website favicon kit, manifest json generator, free favicon maker">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="google-site-verification" content="jA_JFMftxdYdO71esTAN_A7B456b41wsKPniopYNgDY">
+<link rel="canonical" href="https://onlyfiles.in/favicon-generator">
+
+<!-- Favicons & Touch Icons -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="512x512" href="/logo-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/logo-512.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OnlyFiles">
+<meta property="og:title" content="Favicon Generator &amp; App Icon Kit — 100% Private | OnlyFiles">
+<meta property="og:description" content="Generate every favicon size, Apple Touch Icon, and site.webmanifest directly in your browser without uploading your logo to any server.">
+<meta property="og:url" content="https://onlyfiles.in/favicon-generator">
+<meta property="og:image" content="https://onlyfiles.in/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Favicon Generator &amp; App Icon Kit — 100% Private | OnlyFiles">
+<meta name="twitter:description" content="Generate every favicon size, Apple Touch Icon, and site.webmanifest directly in your browser without uploading your logo to any server.">
+<meta name="twitter:image" content="https://onlyfiles.in/og-image.png">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://onlyfiles.in/" },
+    { "@type": "ListItem", "position": 2, "name": "Favicon Generator", "item": "https://onlyfiles.in/favicon-generator" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "OnlyFiles Favicon Generator",
+  "url": "https://onlyfiles.in/favicon-generator",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Any modern web browser",
+  "description": "Client-side favicon generator and app icon kit. Crops and generates 16x16, 32x32, 48x48, 180x180 Apple Touch Icons, and webmanifest code without server uploads.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What favicon sizes does this tool generate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "OnlyFiles generates 16x16, 32x32, 48x48, 64x64, 128x128, 180x180 (Apple Touch Icon), 192x192, 256x256, and 512x512 PWA icons."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is transparency preserved in PNG icons?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The canvas preserves alpha transparency, so transparent logos and circular badges retain their clean transparent background."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are my brand logos uploaded to a remote server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. All scaling and file exports run 100% inside your web browser. Your brand assets remain strictly on your computer."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+  :root{
+    --bg:#0c1512;
+    --surface:#121e19;
+    --surface-2:#182a22;
+    --surface-3:#1e352b;
+    --border:#25392f;
+    --text:#eef4f0;
+    --text-dim:#9db3a7;
+    --text-faint:#6d8579;
+    --accent:#5eead4;
+    --accent-strong:#2dd4bf;
+    --accent-ink:#04201b;
+    --gold:#f2c879;
+    --gold-ink:#2b1d02;
+    --font-display:'Fraunces', ui-serif, Georgia, serif;
+    --font-body:'Manrope', ui-sans-serif, system-ui, sans-serif;
+    --font-mono:'JetBrains Mono', ui-monospace, monospace;
+    --radius-m:12px;
+    --radius-l:18px;
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --bg:#f3f7f4; --surface:#ffffff; --surface-2:#eaf1ec; --surface-3:#dfe9e2; --border:#d7e3dc;
+      --text:#0f1f19; --text-dim:#4c6156; --text-faint:#7c9188;
+      --accent:#0d9488; --accent-strong:#0f766e; --accent-ink:#f3fffb;
+      --gold:#b5791a; --gold-ink:#fffaf0;
+    }
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{background:var(--bg);color:var(--text);font:15px/1.6 var(--font-body);-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px;}
+  a{color:var(--accent-strong);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  header.nav{border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:100;backdrop-filter:blur(8px);}
+  .nav-inner{max-width:1120px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  .brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:600;font-size:18px;color:var(--text);text-decoration:none;}
+  .navlinks{display:flex;align-items:center;gap:18px;}
+  .navlinks a{font-size:13.5px;font-weight:600;color:var(--text-dim);}
+  .navlinks a:hover{color:var(--text);text-decoration:none;}
+
+  .btn{font-family:var(--font-body);font-weight:700;font-size:14px;border-radius:999px;border:1px solid transparent;padding:10px 18px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .15s ease;text-decoration:none;white-space:nowrap;}
+  .btn:active{transform:translateY(1px);}
+  .btn-gold{background:var(--gold);color:var(--gold-ink);}
+  .btn-gold:hover{box-shadow:0 6px 20px -6px color-mix(in srgb, var(--gold) 65%, transparent);text-decoration:none;}
+  .btn-primary{background:var(--accent);color:var(--accent-ink);}
+  .btn-primary:hover{background:var(--accent-strong);text-decoration:none;}
+  .btn-ghost{background:transparent;border-color:var(--border);color:var(--text);}
+  .btn-ghost:hover{background:var(--surface-2);}
+  .btn-sm{padding:6px 12px;font-size:12px;}
+  .btn-block{width:100%;justify-content:center;}
+
+  .breadcrumbs{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-faint);margin:24px 0 16px;font-family:var(--font-mono);}
+  .breadcrumbs a{color:var(--text-dim);}
+  .breadcrumbs .sep{opacity:.5;}
+  .breadcrumbs .current{color:var(--text);font-weight:600;}
+
+  .hero{padding:20px 0 40px;text-align:center;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dim);background:var(--surface-2);border:1px solid var(--border);padding:5px 12px;border-radius:999px;margin-bottom:16px;}
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);}
+  h1{font-family:var(--font-display);font-size:clamp(30px,4.5vw,46px);font-weight:600;margin:0 0 16px;line-height:1.15;}
+  h1 em{font-style:italic;color:var(--accent);}
+  .lede{font-size:17px;color:var(--text-dim);max-width:680px;margin:0 auto 32px;}
+
+  /* Tool Interface Card */
+  .tool-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-l);padding:28px;max-width:640px;margin:0 auto 60px;box-shadow:0 12px 36px -12px rgba(0,0,0,0.3);}
+  .dropzone{border:2px dashed var(--border);border-radius:var(--radius-m);padding:36px 20px;text-align:center;cursor:pointer;transition:border-color .15s ease, background .15s ease;}
+  .dropzone:hover,.dropzone.dragover{border-color:var(--accent);background:var(--surface-2);}
+  .dropzone svg{color:var(--accent);margin-bottom:12px;}
+  .dz-title{font-weight:700;font-size:16px;margin-bottom:4px;}
+  .dz-sub{font-size:13px;color:var(--text-faint);}
+  .dz-file-input{display:none;}
+
+  .result-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:12px;margin-top:20px;}
+  .result-card{background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px;}
+  .result-thumb{width:48px;height:48px;border-radius:6px;padding:4px;border:1px solid var(--border);}
+  .rc-name{font-weight:700;font-size:12.5px;font-family:var(--font-mono);}
+  .rc-size{font-size:11px;color:var(--text-faint);margin-bottom:4px;}
+
+  .code-block{background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:12px 16px;font-family:var(--font-mono);font-size:12px;overflow-x:auto;color:var(--accent);margin:14px 0;}
+
+  /* Content Sections */
+  .content-section{padding:40px 0;border-top:1px solid var(--border);}
+  .content-section h2{font-family:var(--font-display);font-size:26px;margin:0 0 16px;}
+  .content-section p{color:var(--text-dim);font-size:15px;line-height:1.7;}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:28px 0;}
+  @media(max-width:700px){.grid-2{grid-template-columns:1fr;}}
+  .feature-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-m);padding:20px;}
+  .feature-box h4{margin:0 0 8px;font-size:16px;color:var(--text);}
+  .feature-box p{margin:0;font-size:14px;color:var(--text-faint);}
+
+  /* FAQ Accordion */
+  .faq-item{border-bottom:1px solid var(--border);padding:18px 0;}
+  .faq-item:first-of-type{border-top:1px solid var(--border);}
+  .faq-q{font-weight:700;font-size:16px;color:var(--text);cursor:pointer;}
+  .faq-a{margin-top:10px;color:var(--text-dim);font-size:14.5px;line-height:1.6;}
+
+  footer{border-top:1px solid var(--border);padding:40px 0;margin-top:40px;}
+  .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;}
+  .footer-links{display:flex;gap:16px;font-size:13px;flex-wrap:wrap;}
+  .footer-links a{color:var(--text-dim);}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/></svg>
+      OnlyFiles
+    </a>
+    <div class="navlinks">
+      <a href="/#appShell">All Tools</a>
+      <a href="/compress-image">Compress Image</a>
+      <a href="/resize-image">Resize Image</a>
+      <a href="/#appShell" class="btn btn-gold" style="padding:8px 16px;font-size:13px;">Explore All Tools</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="breadcrumbs">
+    <a href="/">Home</a>
+    <span class="sep">/</span>
+    <span class="current">Favicon Generator</span>
+  </div>
+
+  <section class="hero">
+    <div class="eyebrow"><span class="dot"></span>100% In-Browser &middot; Zero Uploads</div>
+    <h1>Favicon &amp; App Icon Kit <em>Privately</em></h1>
+    <p class="lede">Generate every essential favicon size, 180x180 Apple Touch Icon, and webmanifest code directly in your browser from any square image.</p>
+  </section>
+
+  <!-- Interactive Tool -->
+  <div class="tool-card">
+    <div class="dropzone" id="faviconDropzone" tabindex="0" role="button" aria-label="Drop a square logo image here">
+      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+        <circle cx="8.5" cy="8.5" r="1.5"/>
+        <polyline points="21 15 16 10 5 21"/>
+      </svg>
+      <div class="dz-title">Drop your logo or icon image here</div>
+      <div class="dz-sub">Ideally 512x512 PNG with transparent background</div>
+      <input type="file" id="faviconInput" class="dz-file-input" accept="image/*">
+    </div>
+
+    <div class="result-grid" id="faviconResults"></div>
+
+    <div id="faviconExtra" style="display:none;margin-top:24px;">
+      <div style="display:flex;gap:10px;margin-bottom:12px;">
+        <button class="btn btn-ghost" id="manifestDownloadBtn" style="flex:1;justify-content:center;">Download manifest.json</button>
+        <button class="btn btn-ghost" id="snippetCopyBtn" style="flex:1;justify-content:center;">Copy HTML Code</button>
+      </div>
+      <pre class="code-block" id="faviconSnippet"></pre>
+    </div>
+  </div>
+
+  <!-- Content Section -->
+  <section class="content-section">
+    <h2>Why Every Modern Website Needs a Complete Favicon Kit</h2>
+    <p>In modern web browsers, operating systems, and mobile devices, a simple 16x16 ICO file is no longer sufficient. High-density Retina displays, mobile home screen bookmarks, and Progressive Web Apps (PWAs) each request distinct icon resolutions.</p>
+    <p>OnlyFiles takes your master brand icon and accurately crops, sharpens, and downsamples it into every standard specification using bicubic canvas resampling on your device.</p>
+
+    <div class="grid-2">
+      <div class="feature-box">
+        <h4>All Standard Resolutions</h4>
+        <p>Generates 16x16 (tabs), 32x32 (taskbar), 48x48 (desktop), 180x180 (iOS touch icon), and 192/512px (Android PWA).</p>
+      </div>
+      <div class="feature-box">
+        <h4>Transparency Preserved</h4>
+        <p>Maintains full 32-bit alpha channel transparency across all generated PNG files without color shifts or black borders.</p>
+      </div>
+      <div class="feature-box">
+        <h4>Ready-to-Use HTML Snippet</h4>
+        <p>Generates clean, pre-formatted standard HTML head tags you can copy directly into your website's template.</p>
+      </div>
+      <div class="feature-box">
+        <h4>Automatic Center Square Crop</h4>
+        <p>If your source graphic is not square, OnlyFiles intelligently centers and squares the canvas to prevent aspect ratio distortion.</p>
+      </div>
+    </div>
+
+    <h2>Standard Favicon Specifications</h2>
+    <p><strong>16x16:</strong> Classic desktop browser tab favicon.</p>
+    <p><strong>32x32:</strong> Windows taskbar pin and browser bookmark bar.</p>
+    <p><strong>48x48:</strong> Windows desktop shortcut icon.</p>
+    <p><strong>180x180:</strong> Apple Touch Icon for iPhone and iPad home screen bookmarks.</p>
+    <p><strong>192x192 &amp; 512x512:</strong> Android Chrome home screen icon and Progressive Web App splash screens.</p>
+
+    <!-- FAQs -->
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-q">What source image resolution is recommended?</div>
+      <div class="faq-a">A square PNG image of at least 512x512 pixels with a transparent background provides the best downsampled quality across all smaller icon sizes.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do I install the generated icons on my site?</div>
+      <div class="faq-a">Download the generated PNG files into your website root directory, copy the provided HTML snippet, and paste it into the `&lt;head&gt;` element of your HTML pages.</div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <p>&copy; 2026 OnlyFiles &middot; Private, on-device file tools.</p>
+    <div class="footer-links">
+      <a href="/#appShell">All Tools</a>
+      <a href="/compress-pdf">Compress PDF</a>
+      <a href="/merge-pdf">Merge PDF</a>
+      <a href="/compress-image">Compress Image</a>
+      <a href="/favicon-generator">Favicon Generator</a>
+      <a href="/resize-image">Resize Image</a>
+      <a href="/watermark-image">Watermark Image</a>
+      <a href="/webp-to-png">WebP to PNG</a>
+      <a href="/jpg-to-png">JPG to PNG</a>
+      <a href="/jpg-to-pdf">JPG to PDF</a>
+      <a href="/compress-video">Compress Video</a>
+      <a href="/security-vault">Security Vault</a>
+      <a href="/about">About</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+      <a href="mailto:hello@onlyfiles.in">hello@onlyfiles.in</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var faviconDropzone = document.getElementById('faviconDropzone');
+  var faviconInput = document.getElementById('faviconInput');
+  var faviconResults = document.getElementById('faviconResults');
+  var faviconExtra = document.getElementById('faviconExtra');
+  var manifestDownloadBtn = document.getElementById('manifestDownloadBtn');
+  var snippetCopyBtn = document.getElementById('snippetCopyBtn');
+  var faviconSnippet = document.getElementById('faviconSnippet');
+  var FAVICON_SIZES = [16,32,48,64,128,180,192,256,512];
+
+  function cropToSquareCanvas(img, size){
+    var c = document.createElement('canvas'); c.width = size; c.height = size;
+    var cx = c.getContext('2d');
+    var iw = img.naturalWidth, ih = img.naturalHeight;
+    var side = Math.min(iw, ih);
+    var sx = (iw - side) / 2, sy = (ih - side) / 2;
+    cx.drawImage(img, sx, sy, side, side, 0, 0, size, size);
+    return c;
+  }
+
+  function buildFaviconSet(img, origName){
+    faviconResults.innerHTML = '';
+    faviconExtra.style.display = 'none';
+    var baseName = origName.replace(/\.[^.]+$/, '') || 'icon';
+    var count = FAVICON_SIZES.length, done = 0;
+    FAVICON_SIZES.forEach(function(size){
+      var c = cropToSquareCanvas(img, size);
+      c.toBlob(function(blob){
+        var card = document.createElement('div'); card.className = 'result-card';
+        var im = document.createElement('img'); im.className = 'result-thumb'; im.style.objectFit = 'contain'; im.style.background = 'var(--surface-3)'; im.src = URL.createObjectURL(blob);
+        var name = document.createElement('div'); name.className = 'rc-name'; name.textContent = size + 'x' + size;
+        var sz = document.createElement('div'); sz.className = 'rc-size'; sz.textContent = (blob.size / 1024).toFixed(1) + ' KB';
+        var btn = document.createElement('button'); btn.className = 'btn btn-primary btn-sm btn-block'; btn.textContent = 'Download';
+        btn.addEventListener('click', function(){
+          var dlUrl = URL.createObjectURL(blob);
+          var a = document.createElement('a'); a.href = dlUrl; a.download = 'favicon-' + size + 'x' + size + '.png';
+          document.body.appendChild(a); a.click(); document.body.removeChild(a);
+          URL.revokeObjectURL(dlUrl);
+        });
+        card.appendChild(im); card.appendChild(name); card.appendChild(sz); card.appendChild(btn);
+        faviconResults.appendChild(card);
+        done++;
+        if (done === count) showFaviconExtra(baseName);
+      }, 'image/png');
+    });
+  }
+
+  function showFaviconExtra(baseName){
+    faviconExtra.style.display = 'block';
+    var manifest = {
+      name: baseName, short_name: baseName.slice(0,12),
+      icons: FAVICON_SIZES.filter(function(s){ return s >= 192; }).map(function(s){ return { src: 'favicon-' + s + 'x' + s + '.png', sizes: s + 'x' + s, type: 'image/png' }; }),
+      theme_color: '#0d9488', background_color: '#ffffff', display: 'standalone'
+    };
+    manifestDownloadBtn.onclick = function(){
+      var blob = new Blob([JSON.stringify(manifest, null, 2)], { type: 'application/json' });
+      var dlUrl = URL.createObjectURL(blob);
+      var a = document.createElement('a'); a.href = dlUrl; a.download = 'site.webmanifest';
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      URL.revokeObjectURL(dlUrl);
+    };
+    var snippet = '<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">\n' +
+      '<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">\n' +
+      '<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">\n' +
+      '<link rel="manifest" href="/site.webmanifest">';
+    faviconSnippet.textContent = snippet;
+    snippetCopyBtn.onclick = function(){
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(snippet).then(function(){ snippetCopyBtn.textContent = 'Copied!'; setTimeout(function(){ snippetCopyBtn.textContent = 'Copy HTML Code'; }, 2000); });
+      }
+    };
+  }
+
+  faviconDropzone.addEventListener('click', function(){ faviconInput.click(); });
+  faviconDropzone.addEventListener('dragover', function(e){ e.preventDefault(); faviconDropzone.classList.add('dragover'); });
+  faviconDropzone.addEventListener('dragleave', function(){ faviconDropzone.classList.remove('dragover'); });
+  faviconDropzone.addEventListener('drop', function(e){
+    e.preventDefault(); faviconDropzone.classList.remove('dragover');
+    if (e.dataTransfer && e.dataTransfer.files) loadFavicon(e.dataTransfer.files[0]);
+  });
+  faviconInput.addEventListener('change', function(){
+    if (faviconInput.files && faviconInput.files[0]) loadFavicon(faviconInput.files[0]);
+  });
+
+  function loadFavicon(file){
+    if (!file || file.type.indexOf('image/') !== 0) return;
+    var img = new Image();
+    var url = URL.createObjectURL(file);
+    img.onload = function(){ buildFaviconSet(img, file.name); };
+    img.src = url;
+  }
+})();
+</script>
+</body>
+</html>

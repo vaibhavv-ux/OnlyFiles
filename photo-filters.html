@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>if(location.hostname==='www.onlyfiles.in'){location.replace('https://onlyfiles.in'+location.pathname+location.search+location.hash);}</script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Photo Filters &amp; Effects — Free Online Image Stylizer | OnlyFiles</title>
+<meta name="description" content="Apply vintage, sepia, black &amp; white, and cinematic photo filters directly in your browser. Fine-tune brightness, contrast, and saturation with zero server uploads.">
+<meta name="keywords" content="photo filters online, image effects, black and white photo filter, vintage photo filter, sepia filter, free image stylizer, private photo filter">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="google-site-verification" content="jA_JFMftxdYdO71esTAN_A7B456b41wsKPniopYNgDY">
+<link rel="canonical" href="https://onlyfiles.in/photo-filters">
+
+<!-- Favicons & Touch Icons -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="512x512" href="/logo-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/logo-512.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OnlyFiles">
+<meta property="og:title" content="Photo Filters &amp; Effects — 100% Private | OnlyFiles">
+<meta property="og:description" content="Apply artistic filters and fine-tune image color settings locally in your browser. No registration, no watermarks, completely free.">
+<meta property="og:url" content="https://onlyfiles.in/photo-filters">
+<meta property="og:image" content="https://onlyfiles.in/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Photo Filters &amp; Effects — 100% Private | OnlyFiles">
+<meta name="twitter:description" content="Apply artistic filters and fine-tune image color settings locally in your browser. No registration, no watermarks, completely free.">
+<meta name="twitter:image" content="https://onlyfiles.in/og-image.png">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://onlyfiles.in/" },
+    { "@type": "ListItem", "position": 2, "name": "Photo Filters", "item": "https://onlyfiles.in/photo-filters" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "OnlyFiles Photo Filters & Effects",
+  "url": "https://onlyfiles.in/photo-filters",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any modern web browser",
+  "description": "On-device photo filter and color grading application. Transform photos with curated vintage, noir, and vibrant filters with fine-tuning adjustments.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does applying filters reduce the resolution or quality of my photo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The filters are rendered at the exact native dimensions of your original image using HTML5 Canvas graphics acceleration, maintaining crisp details."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are my personal pictures stored or transmitted across the internet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Never. All adjustments, filters, and rendering operations execute purely inside your local browser sandbox. No photo is ever sent to an external server."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I adjust individual color settings like contrast and saturation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can select any artistic preset and further tweak Brightness, Contrast, and Saturation sliders in real time."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+  :root{
+    --bg:#0c1512;
+    --surface:#121e19;
+    --surface-2:#182a22;
+    --surface-3:#1e352b;
+    --border:#25392f;
+    --text:#eef4f0;
+    --text-dim:#9db3a7;
+    --text-faint:#6d8579;
+    --accent:#5eead4;
+    --accent-strong:#2dd4bf;
+    --accent-glow:rgba(94,234,212,0.15);
+    --radius:12px;
+    --font-serif:'Fraunces',serif;
+    --font-sans:'Manrope',sans-serif;
+    --font-mono:'JetBrains Mono',monospace;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background-color:var(--bg);
+    color:var(--text);
+    font-family:var(--font-sans);
+    line-height:1.6;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+  }
+
+  header{
+    border-bottom:1px solid var(--border);
+    background:rgba(18,30,25,0.85);
+    backdrop-filter:blur(12px);
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .header-inner{
+    max-width:1200px;
+    margin:0 auto;
+    padding:1rem 1.5rem;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:0.75rem;
+    text-decoration:none;
+    color:var(--text);
+    font-weight:700;
+    font-size:1.15rem;
+  }
+  .logo-icon{
+    width:32px;
+    height:32px;
+    border-radius:8px;
+    background:linear-gradient(135deg,#1e352b,#121e19);
+    border:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .logo-icon svg{width:18px;height:18px;fill:var(--accent);}
+  .nav-links{display:flex;align-items:center;gap:1.5rem;}
+  .nav-links a{color:var(--text-dim);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
+  .nav-links a:hover{color:var(--text);}
+
+  main{flex:1;max-width:960px;width:100%;margin:0 auto;padding:2.5rem 1.5rem;}
+
+  .breadcrumb{
+    display:flex;
+    align-items:center;
+    gap:0.5rem;
+    font-size:0.85rem;
+    color:var(--text-faint);
+    margin-bottom:1.5rem;
+  }
+  .breadcrumb a{color:var(--text-dim);text-decoration:none;}
+  .breadcrumb a:hover{color:var(--accent);}
+
+  .hero{text-align:center;margin-bottom:2.5rem;}
+  .hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:0.5rem;
+    padding:0.35rem 0.85rem;
+    background:var(--surface-2);
+    border:1px solid var(--border);
+    border-radius:100px;
+    font-size:0.75rem;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    color:var(--accent);
+    margin-bottom:1rem;
+  }
+  .hero h1{
+    font-family:var(--font-serif);
+    font-size:2.5rem;
+    font-weight:600;
+    line-height:1.2;
+    margin-bottom:0.75rem;
+    letter-spacing:-0.02em;
+  }
+  .hero p{
+    color:var(--text-dim);
+    font-size:1.1rem;
+    max-width:640px;
+    margin:0 auto;
+  }
+
+  .tool-card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:2rem;
+    margin-bottom:3rem;
+  }
+
+  .dropzone{
+    border:2px dashed var(--border);
+    border-radius:calc(var(--radius) - 4px);
+    padding:3rem 1.5rem;
+    text-align:center;
+    cursor:pointer;
+    transition:all 0.2s;
+    background:var(--surface-2);
+  }
+  .dropzone:hover,.dropzone.dragover{
+    border-color:var(--accent);
+    background:var(--surface-3);
+  }
+  .dropzone-icon{
+    width:48px;
+    height:48px;
+    margin:0 auto 1rem;
+    border-radius:12px;
+    background:var(--surface);
+    border:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .dropzone-icon svg{width:24px;height:24px;stroke:var(--accent);fill:none;stroke-width:2;}
+  .dropzone-title{font-size:1.05rem;font-weight:600;margin-bottom:0.25rem;}
+  .dropzone-hint{font-size:0.85rem;color:var(--text-faint);}
+
+  .canvas-wrap{
+    margin-top:1.5rem;
+    background:#080f0c;
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:1rem;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:260px;
+    overflow:hidden;
+  }
+  #filterCanvas{
+    max-width:100%;
+    max-height:500px;
+    object-fit:contain;
+    border-radius:4px;
+    display:none;
+  }
+
+  .swatch-row{
+    display:none;
+    gap:0.75rem;
+    overflow-x:auto;
+    padding:1rem 0 0.5rem;
+    margin-top:1rem;
+  }
+  .filter-swatch{
+    background:var(--surface-2);
+    border:2px solid var(--border);
+    border-radius:8px;
+    padding:0.4rem;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:0.4rem;
+    cursor:pointer;
+    flex:0 0 74px;
+    transition:all 0.2s;
+    color:var(--text);
+  }
+  .filter-swatch:hover{border-color:var(--accent-strong);}
+  .filter-swatch.active{border-color:var(--accent);background:var(--surface-3);}
+  .fs-thumb{width:56px;height:56px;object-fit:cover;border-radius:4px;}
+  .fs-label{font-size:0.75rem;font-weight:600;}
+
+  .adjust-row{
+    display:none;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:1rem;
+    margin-top:1.5rem;
+    padding-top:1.25rem;
+    border-top:1px solid var(--border);
+  }
+  .slider-group{display:flex;flex-direction:column;gap:0.4rem;}
+  .slider-header{display:flex;justify-content:space-between;font-size:0.8rem;font-weight:600;text-transform:uppercase;color:var(--text-dim);}
+  .slider-input{
+    accent-color:var(--accent);
+    cursor:pointer;
+  }
+
+  .action-bar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:1.5rem;
+    padding-top:1.25rem;
+    border-top:1px solid var(--border);
+  }
+  .status-note{font-size:0.85rem;color:var(--text-faint);}
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:0.5rem;
+    padding:0.65rem 1.25rem;
+    border-radius:8px;
+    font-weight:600;
+    font-size:0.9rem;
+    cursor:pointer;
+    border:none;
+    transition:all 0.2s;
+    text-decoration:none;
+  }
+  .btn-primary{background:var(--accent);color:#08130f;}
+  .btn-primary:hover{background:var(--accent-strong);}
+  .btn-primary:disabled{opacity:0.5;cursor:not-allowed;}
+
+  .content-section{
+    margin-bottom:3rem;
+  }
+  .content-section h2{
+    font-family:var(--font-serif);
+    font-size:1.75rem;
+    margin-bottom:1rem;
+    letter-spacing:-0.01em;
+  }
+  .content-section p{
+    color:var(--text-dim);
+    margin-bottom:1rem;
+  }
+
+  .grid-features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:1.5rem;
+    margin:2rem 0;
+  }
+  .feature-box{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:1.5rem;
+  }
+  .feature-box h3{font-size:1.05rem;font-weight:600;margin-bottom:0.5rem;}
+  .feature-box p{font-size:0.9rem;color:var(--text-dim);margin:0;}
+
+  .faq-list{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+    margin-top:1.5rem;
+  }
+  .faq-item{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:1.25rem 1.5rem;
+  }
+  .faq-item h3{font-size:1rem;font-weight:600;margin-bottom:0.5rem;}
+  .faq-item p{font-size:0.9rem;color:var(--text-dim);margin:0;}
+
+  footer{
+    border-top:1px solid var(--border);
+    background:var(--surface);
+    padding:3rem 1.5rem;
+    margin-top:auto;
+  }
+  .footer-inner{
+    max-width:1200px;
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
+    gap:2rem;
+  }
+  .footer-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:1.5rem;
+    font-size:0.85rem;
+  }
+  .footer-links a{color:var(--text-dim);text-decoration:none;}
+  .footer-links a:hover{color:var(--accent);}
+  .footer-copy{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:0.8rem;
+    color:var(--text-faint);
+  }
+
+  @media(max-width:640px){
+    .action-bar{flex-direction:column;gap:1rem;align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+      </div>
+      <span>OnlyFiles</span>
+    </a>
+    <nav class="nav-links">
+      <a href="/">All Tools</a>
+      <a href="/watermark-image">Watermark</a>
+      <a href="/blur-image">Blur &amp; Redact</a>
+      <a href="/compress-image">Compress Image</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <nav class="breadcrumb">
+    <a href="/">Home</a>
+    <span>/</span>
+    <span>Photo Filters</span>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-badge">Zero Server Uploads &bull; 100% Free</div>
+    <h1>Photo Filters &amp; Effects</h1>
+    <p>Enhance, recolor, and transform your photos with instant artistic presets and precision color adjustments.</p>
+  </div>
+
+  <div class="tool-card">
+    <div class="dropzone" id="filterDropzone">
+      <input type="file" id="filterInput" accept="image/*" style="display:none">
+      <div class="dropzone-icon">
+        <svg viewBox="0 0 24 24"><path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+      </div>
+      <div class="dropzone-title">Drop an image here or click to browse</div>
+      <div class="dropzone-hint">JPG, PNG, WebP, or AVIF supported</div>
+    </div>
+
+    <div class="canvas-wrap">
+      <canvas id="filterCanvas"></canvas>
+    </div>
+
+    <div class="swatch-row" id="filterSwatchRow"></div>
+
+    <div class="adjust-row" id="filterAdjustRow">
+      <div class="slider-group">
+        <div class="slider-header">
+          <label for="filterBrightness">Brightness</label>
+          <span id="valBrightness">100%</span>
+        </div>
+        <input type="range" id="filterBrightness" class="slider-input" min="50" max="180" value="100">
+      </div>
+      <div class="slider-group">
+        <div class="slider-header">
+          <label for="filterContrast">Contrast</label>
+          <span id="valContrast">100%</span>
+        </div>
+        <input type="range" id="filterContrast" class="slider-input" min="50" max="180" value="100">
+      </div>
+      <div class="slider-group">
+        <div class="slider-header">
+          <label for="filterSaturation">Saturation</label>
+          <span id="valSaturation">100%</span>
+        </div>
+        <input type="range" id="filterSaturation" class="slider-input" min="0" max="250" value="100">
+      </div>
+    </div>
+
+    <div class="action-bar">
+      <div class="status-note" id="filterNote">Drop an image above to start styling.</div>
+      <button type="button" class="btn btn-primary" id="filterDownloadBtn" disabled>Download Filtered Image</button>
+    </div>
+  </div>
+
+  <section class="content-section">
+    <h2>Professional Photo Effects Straight in Your Browser</h2>
+    <p>Applying clean color grading, moody monochrome tones, or warm vintage film aesthetics shouldn't require installing gigabytes of heavyweight desktop photo software or paying monthly cloud subscriptions. OnlyFiles Photo Filters &amp; Effects brings high-fidelity image transformations directly into your web browser using modern GPU-accelerated canvas filter primitives.</p>
+    <p>Because processing occurs purely inside client memory, your pictures are never uploaded to any remote server or third-party database. Whether you are retouching personal family photos, staging e-commerce product shots, or preparing blog visuals, your visual assets remain totally confidential.</p>
+
+    <div class="grid-features">
+      <div class="feature-box">
+        <h3>Curated Film Presets</h3>
+        <p>Instant presets including classic Black &amp; White Noir, Warm Sunset, Cool Cinematic, 70s Vintage, Sepia, and high-dynamic Vivid pop.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Fine-Tuned Adjustments</h3>
+        <p>Combine any filter preset with custom slider controls for brightness, contrast, and color saturation to achieve your exact desired mood.</p>
+      </div>
+      <div class="feature-box">
+        <h3>Full Native Resolution</h3>
+        <p>Zero compression downgrades. The tool renders your output at the photo's original pixel dimensions with lossless or high-quality export.</p>
+      </div>
+    </div>
+
+    <h2>How to Apply Photo Filters</h2>
+    <p>1. <strong>Import Image:</strong> Click the dropzone or drag and drop any JPG, PNG, or WebP photo into the tool window.</p>
+    <p>2. <strong>Select a Style:</strong> Browse the live thumbnail preview strip below your image. Click any style to instantly preview it on your full photo.</p>
+    <p>3. <strong>Adjust Sliders:</strong> Fine-tune lighting and color balance using the Brightness, Contrast, and Saturation sliders.</p>
+    <p>4. <strong>Save &amp; Export:</strong> Click "Download Filtered Image" to immediately save your finalized picture to your computer.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>Does applying filters reduce the resolution or quality of my photo?</h3>
+        <p>No. The filters are rendered at the exact native dimensions of your original image using HTML5 Canvas graphics acceleration, maintaining crisp details.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Are my personal pictures stored or transmitted across the internet?</h3>
+        <p>Never. All adjustments, filters, and rendering operations execute purely inside your local browser sandbox. No photo is ever sent to an external server.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I adjust individual color settings like contrast and saturation?</h3>
+        <p>Yes. You can select any artistic preset and further tweak Brightness, Contrast, and Saturation sliders in real time.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/jpg-to-pdf">JPG to PDF</a>
+      <a href="/compress-image">Compress Image</a>
+      <a href="/watermark-image">Watermark Image</a>
+      <a href="/photo-filters">Photo Filters</a>
+      <a href="/blur-image">Blur &amp; Redact</a>
+      <a href="/privacy-scrubber">Privacy Scrubber</a>
+      <a href="/favicon-generator">Favicon Generator</a>
+      <a href="/qr-code-generator">QR Code Generator</a>
+      <a href="/bulk-file-renamer">Bulk Renamer</a>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-and-conditions">Terms of Service</a>
+    </div>
+    <div class="footer-copy">
+      <span>&copy; OnlyFiles. Free private file tools.</span>
+      <span>No cloud processing &bull; 100% on-device</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var dropzone = document.getElementById('filterDropzone');
+  var input = document.getElementById('filterInput');
+  var canvasEl = document.getElementById('filterCanvas');
+  var ctx = canvasEl.getContext('2d');
+  var swatchRow = document.getElementById('filterSwatchRow');
+  var adjustRow = document.getElementById('filterAdjustRow');
+  var bInput = document.getElementById('filterBrightness');
+  var cInput = document.getElementById('filterContrast');
+  var sInput = document.getElementById('filterSaturation');
+  var valB = document.getElementById('valBrightness');
+  var valC = document.getElementById('valContrast');
+  var valS = document.getElementById('valSaturation');
+  var downloadBtn = document.getElementById('filterDownloadBtn');
+  var note = document.getElementById('filterNote');
+
+  var currentImg = null;
+  var baseName = 'photo';
+  var origType = 'image/jpeg';
+  var activeKey = 'original';
+
+  var FILTER_PRESETS = [
+    ['original', 'Original', ''],
+    ['grayscale', 'Grayscale', 'grayscale(100%)'],
+    ['sepia', 'Sepia', 'sepia(80%) saturate(120%)'],
+    ['vintage', 'Vintage', 'sepia(35%) contrast(90%) brightness(105%) saturate(80%)'],
+    ['cool', 'Cool', 'saturate(110%) hue-rotate(15deg) brightness(102%)'],
+    ['warm', 'Warm', 'saturate(120%) hue-rotate(-8deg) brightness(105%) contrast(102%)'],
+    ['noir', 'Noir', 'grayscale(100%) contrast(130%) brightness(90%)'],
+    ['fade', 'Fade', 'contrast(85%) brightness(110%) saturate(70%)'],
+    ['vivid', 'Vivid', 'saturate(160%) contrast(110%)'],
+    ['invert', 'Invert', 'invert(100%)']
+  ];
+
+  function presetFilterFor(key){
+    for (var i = 0; i < FILTER_PRESETS.length; i++) {
+      if (FILTER_PRESETS[i][0] === key) return FILTER_PRESETS[i][2];
+    }
+    return '';
+  }
+
+  function renderFilterCanvas(){
+    if (!currentImg) return;
+    var w = currentImg.naturalWidth, h = currentImg.naturalHeight;
+    canvasEl.width = w;
+    canvasEl.height = h;
+
+    var preset = presetFilterFor(activeKey);
+    var b = bInput.value, c = cInput.value, s = sInput.value;
+    valB.textContent = b + '%';
+    valC.textContent = c + '%';
+    valS.textContent = s + '%';
+
+    ctx.filter = (preset ? preset + ' ' : '') + 'brightness(' + b + '%) contrast(' + c + '%) saturate(' + s + '%)';
+    ctx.clearRect(0, 0, w, h);
+    ctx.drawImage(currentImg, 0, 0, w, h);
+    ctx.filter = 'none';
+  }
+
+  function buildSwatches(){
+    swatchRow.innerHTML = '';
+    FILTER_PRESETS.forEach(function(preset){
+      var key = preset[0], label = preset[1], css = preset[2];
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'filter-swatch' + (key === activeKey ? ' active' : '');
+      btn.setAttribute('data-filter-key', key);
+
+      var thumbCanvas = document.createElement('canvas');
+      thumbCanvas.width = 56;
+      thumbCanvas.height = 56;
+      var tctx = thumbCanvas.getContext('2d');
+      tctx.filter = css || 'none';
+
+      var iw = currentImg.naturalWidth, ih = currentImg.naturalHeight;
+      var side = Math.min(iw, ih);
+      tctx.drawImage(currentImg, (iw - side) / 2, (ih - side) / 2, side, side, 0, 0, 56, 56);
+
+      var img = document.createElement('img');
+      img.className = 'fs-thumb';
+      img.src = thumbCanvas.toDataURL('image/jpeg', 0.8);
+      img.alt = label;
+
+      var lbl = document.createElement('span');
+      lbl.className = 'fs-label';
+      lbl.textContent = label;
+
+      btn.appendChild(img);
+      btn.appendChild(lbl);
+
+      btn.addEventListener('click', function(){
+        activeKey = key;
+        swatchRow.querySelectorAll('.filter-swatch').forEach(function(el){
+          el.classList.toggle('active', el.getAttribute('data-filter-key') === key);
+        });
+        renderFilterCanvas();
+      });
+
+      swatchRow.appendChild(btn);
+    });
+  }
+
+  function handleFile(file){
+    if (!file || file.type.indexOf('image/') !== 0) {
+      note.textContent = 'Please choose a valid image file.';
+      return;
+    }
+    baseName = file.name.replace(/\.[^.]+$/, '') || 'photo';
+    origType = file.type === 'image/png' ? 'image/png' : 'image/jpeg';
+    var url = URL.createObjectURL(file);
+    var img = new Image();
+    img.onload = function(){
+      currentImg = img;
+      activeKey = 'original';
+      bInput.value = 100;
+      cInput.value = 100;
+      sInput.value = 100;
+      canvasEl.style.display = 'block';
+      swatchRow.style.display = 'flex';
+      adjustRow.style.display = 'grid';
+      buildSwatches();
+      renderFilterCanvas();
+      downloadBtn.disabled = false;
+      note.textContent = 'Preset applied. You can further fine-tune with the sliders below.';
+    };
+    img.src = url;
+  }
+
+  dropzone.addEventListener('click', function(){ input.click(); });
+  dropzone.addEventListener('dragover', function(e){ e.preventDefault(); dropzone.classList.add('dragover'); });
+  ['dragleave','dragend'].forEach(function(evt){ dropzone.addEventListener(evt, function(){ dropzone.classList.remove('dragover'); }); });
+  dropzone.addEventListener('drop', function(e){
+    e.preventDefault();
+    dropzone.classList.remove('dragover');
+    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+      handleFile(e.dataTransfer.files[0]);
+    }
+  });
+
+  input.addEventListener('change', function(e){
+    if (e.target.files && e.target.files[0]) {
+      handleFile(e.target.files[0]);
+      input.value = '';
+    }
+  });
+
+  [bInput, cInput, sInput].forEach(function(el){
+    el.addEventListener('input', renderFilterCanvas);
+  });
+
+  downloadBtn.addEventListener('click', function(){
+    canvasEl.toBlob(function(blob){
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = baseName + '-' + activeKey + '.' + (origType === 'image/png' ? 'png' : 'jpg');
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function(){ URL.revokeObjectURL(url); }, 2000);
+    }, origType, 0.92);
+  });
+})();
+</script>
+</body>
+</html>
